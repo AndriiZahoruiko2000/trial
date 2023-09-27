@@ -57,7 +57,7 @@
 
 //   console.log(result);
 // }
-// solution(2007);
+// solution(10);
 
 // function solution(string) {
 //   let newString = "";
@@ -69,7 +69,19 @@
 //   }
 //   return newString;
 // }
-// solution("camelCasing");
+// // console.log(solution("camelCasing"));
+
+// const solution2 = function (string) {
+//   let newString = "";
+//   string.split("").forEach((element) => {
+//     if (element === element.toUpperCase()) {
+//       newString += " ";
+//     }
+//     newString += element;
+//   });
+//   return newString;
+// };
+// console.log(solution2("camelCasing"));\
 
 // function isPrime(num) {
 //   const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
@@ -83,7 +95,52 @@
 //   }
 //   return true;
 // }
-// isPrime(75);
+// console.log(isPrime(73));
+
+// function isPrime2(num) {
+//   const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
+//   if (num <= 1) {
+//     return false;
+//   }
+//   const result = numbers.some((element) => {
+//     if (Number.isInteger(num / element)) {
+//       return true; //ми знайшли те число коли num  поділилось на ціло
+//     }
+//     return false;
+//   });
+//   // в зміній резалт знаходиться true або false
+//   //    це значить що ми перевірили чи ділиться число num на якесь число націло
+//   console.log("result", !result); //якщо some повернув true значить число не prime і ми повертаємо не result
+// }
+// console.log(isPrime2(73));
+
+// function isPrime3(num) {
+//   const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
+//   if (num <= 1) {
+//     return false;
+//   }
+//   const result = numbers.every((element) => {
+//     return !Number.isInteger(num / element);
+//   });
+//   // в зміній резалт знаходиться true або false
+//   //    це значить що ми перевірили чи ділиться число num на якесь число націло
+//   console.log("result", result); //якщо some повернув true значить число не prime і ми повертаємо не result
+// }
+// console.log(isPrime3(73));
+
+// function isPrime3(num) {
+//   const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
+//   if (num <= 1) {
+//     return false;
+//   }
+//   const result = numbers.find((element) => {
+//     return Number.isInteger(num / element);
+//   });
+//   // в зміній резалт знаходиться true або false
+//   //    це значить що ми перевірили чи ділиться число num на якесь число націло
+//   console.log("result", !result); //якщо some повернув true значить число не prime і ми повертаємо не result
+// }
+// console.log(isPrime3(75));
 
 // function moveZeros(arr) {
 //   const newArray = [];
@@ -99,7 +156,33 @@
 
 //   return [...newArray, ...newArrayForZero];
 // }
-// moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]);
+// console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
+
+function moveZeroes2(arr) {
+  return [...arr].sort((a, b) => {
+    // console.log(a);
+    if (a > b) {
+      return -1;
+    }
+    if (a < b) {
+      return 1;
+    }
+    return 0;
+  });
+}
+console.log(moveZeroes2([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
+
+// const numbers = [1, 0, 1, 2, 0, 1, 3];
+// const sortedArray = [...numbers].sort((a, b) => {
+//   if (a < b) {
+//     return -1; // якщо повертаємо число менше 0 елементи в масиві місьцями не міняємо
+//   }
+//   if (a > b) {
+//     return 1; // якщо повертаємо число більше 0 елементи місьцями міняємо
+//   }
+//   return 0; // якщо повертажмо 0 елементи рівні залишаються на своїх місьцях
+// });
+// console.log(sortedArray);
 
 // function moveZeros(arr) {
 //     return arr.sort((a, b) => b === 0 ? -1 : 0);
@@ -170,4 +253,10 @@
 //   return digitalRoot(total);
 // }
 // console.log(digitalRoot(493193));
-console.log(493192 % 9);
+// console.log(493192 % 9);
+
+// const numbers = [1, 2, 3].map((number) => {
+//   //   if (typeof number === "number") return;
+//   return number * 2;
+// });
+// console.log(numbers);

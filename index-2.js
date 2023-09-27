@@ -235,17 +235,17 @@
 //   for (let i = 0; i < cc.length; i += 1) {
 //     console.log(i);
 //     if (i < cc.length - 4) {
-//       console.log(cc[i]);
+//       // console.log(cc[i]);
 //       string += "#";
 //       continue;
 //     }
 //     string += cc[i];
-//     console.log(cc[i]);
+//     // console.log(cc[i]);
 //   }
 //   console.log(string);
 //   return string;
 // }
-// maskify("2373678367823627367836");
+// maskify("47834783473847343847384");
 
 // const clients = ["mango", "andrii", "polly"];
 // const newClients = clients.splice(0, 1, "kiwi");
