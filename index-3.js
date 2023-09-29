@@ -46,18 +46,24 @@
 //     "I",
 //   ];
 //   let result = "";
-//   for (let i = 0; i < decimals.length; i += 1) {
-//     while (number >= decimals[i]) {
-//       console.log(roman[i]);
-//       result += roman[i];
-//       number -= decimals[i];
-//       //   Для того щоб цикл не працював безкінечно
+//   //   for (let i = 0; i < decimals.length; i += 1) {
+//   //     while (number >= decimals[i]) {
+//   //       console.log(roman[i]);
+//   //       result += roman[i];
+//   //       number -= decimals[i];
+//   //       //   Для того щоб цикл не працював безкінечно
+//   //     }
+//   //   }
+//   decimals.forEach((element, index) => {
+//     while (number >= element) {
+//       result += roman[index];
+//       number -= decimals[index];
 //     }
-//   }
+//   });
 
-//   console.log(result);
+//   return result;
 // }
-// solution(10);
+// solution(2007);
 
 // function solution(string) {
 //   let newString = "";
@@ -158,19 +164,21 @@
 // }
 // console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
 
-function moveZeroes2(arr) {
-  return [...arr].sort((a, b) => {
-    // console.log(a);
-    if (a > b) {
-      return -1;
-    }
-    if (a < b) {
-      return 1;
-    }
-    return 0;
-  });
-}
-console.log(moveZeroes2([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
+// function moveZeroes2(arr) {
+//   return [...arr].sort((a, b) => {
+//     // console.log(a);
+//     if (a > b) {
+//       return -1; // елементи містьцями не міняємо
+//     }
+//     if (a < b) {
+//       return 1; // якщо повертаєм 1 то попередній х наступним міняєм місьцями
+//     }
+//     return 0;
+//   });
+// }
+// console.log(moveZeroes2([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
+// на першій ітерації [1, false, 1, 0, 2, 0, 3, 1, "a"]
+// [1, 0, false, 1, 2, 0, 1, 3, "a"]
 
 // const numbers = [1, 0, 1, 2, 0, 1, 3];
 // const sortedArray = [...numbers].sort((a, b) => {
@@ -260,3 +268,87 @@ console.log(moveZeroes2([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
 //   return number * 2;
 // });
 // console.log(numbers);
+
+// const numbers = [1, 0, 4, 2, 0, 5, 11];
+// const sortedNUmbers = [...numbers].sort((a, b) => {
+//   return b === 0 ? -1 : 0;
+//   //  {
+//   //     return -1; //то а буде стояти по меньшому індексу ніж в
+//   //   }
+
+//   //   return 0; //це значить що вони рівні залишаються на своїх місьцях
+// });
+// console.log(sortedNUmbers);
+
+// function arrayDiff(a, b) {
+//   //   return a.filter((element) => {
+//   //     return !b.includes(element);
+//   //   });
+
+//   const filteredArray = [];
+//   for (let i = 0; i < a.length; i += 1) {
+//     if (b.indexOf(a[i]) < 0) {
+//       filteredArray.push(a[i]);
+//     }
+//   }
+//   return filteredArray;
+// }
+// console.log(arrayDiff([1, 2, 2, 2, 3], [2]));
+
+// function disemvowel(str) {
+//   const vowels = ["a", "i", "e", "o", "u"];
+
+//   return str
+//     .split("")
+//     .filter((element) => {
+//       return !vowels.includes(element.toLowerCase());
+//     })
+//     .join("");
+//   // for(let i = 0; i < str.length; i += 1){
+//   //   if(!vowels.includes(str[i]).toLowerCase){
+//   //     newString += str[i];
+//   //   }
+//   // }
+// }
+// disemvowel("This website is for losers LOL!");
+
+// function findOutlier(integers) {
+//   const even = integers.filter((element) => element % 2 === 0);
+//   const odd = integers.filter((element) => element % 2 !== 0);
+//   return even.length === 1 ? even[0] : odd[0];
+// }
+// console.log(findOutlier([1, 2, 3]));
+
+// function solution(string) {
+//   const array = [];
+//   string.split("").forEach((element) => {
+//     if (element === element.toUpperCase()) {
+//       array.push(" ");
+//     }
+//     array.push(element);
+//   });
+//   return array.join("");
+// }
+// console.log(solution("camelCasing"));
+
+// function moveZeros(arr) {
+//   return [...arr].sort((a, b) => (b === 0 ? -1 : 0));
+// }
+// console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
+
+// в нас N число;
+// String(n) ми зробили з числа рядок для того щоб розбити цого на масивж
+// тоді String(n).split() ми зробили масив рядків;
+//якщо в редюс не передавати початкове значення,
+// за початкгове значення береться перший елемент масива (а це рядок)
+//і тоді до попереднього значення ми додаємо елемент з масиву як число (Number(number))
+
+function digitalRoot(n) {
+  const number = String(n)
+    .split("")
+    .reduce((previousValue, number) => {
+      return (previousValue += Number(number));
+    }, 0);
+  return number <= 9 ? number : digitalRoot(number);
+}
+console.log(digitalRoot(1636255));
