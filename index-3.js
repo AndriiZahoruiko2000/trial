@@ -343,12 +343,336 @@
 // за початкгове значення береться перший елемент масива (а це рядок)
 //і тоді до попереднього значення ми додаємо елемент з масиву як число (Number(number))
 
-function digitalRoot(n) {
-  const number = String(n)
-    .split("")
-    .reduce((previousValue, number) => {
-      return (previousValue += Number(number));
-    }, 0);
-  return number <= 9 ? number : digitalRoot(number);
+// function digitalRoot(n) {
+//     const number = String(n)
+//     .split("")
+//     .reduce((previousValue, number) => {
+//       return (previousValue += Number(number));
+//     }, 0);
+//   return number <= 9 ? number : digitalRoot(number);
+// }
+// console.log(digitalRoot(1636255));
+
+//метод мап поелементно перебирає масив
+//callback function може оголошувати параметри element , index i array;
+// метод мап повертає новий масив однакової довжини
+// результат роботи коллбек функціїї записує в новий масив на кожній ітерації\
+
+//якщо у функції не вказаний ретурн функція повертає undefined,
+//якщо вказаний ретурн але не вказано що повертати функція повертає Undefined;
+// function cakes(recipe, available) {
+//   const array = Object.keys(recipe).map((key) => {
+//     return Math.floor(available[key] / recipe[key] || 0);
+//   });
+//   return Math.min(...array);
+// }
+// console.log(
+//   cakes(
+//     { flour: 500, sugar: 200, eggs: 1 },
+//     { flour: 1200, sugar: 1200, eggs: 5, milk: 200 }
+//   )
+// );
+// cakes(
+//   { apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100 },
+//   { sugar: 500, flour: 2000, milk: 2000 }
+// );
+// const user = { name: "mango" };
+// console.log(user.name);
+// const data = [
+//   { name: "Joe", age: 20 },
+//   { name: "Bill", age: 30 },
+//   { name: "Kate", age: 23 },
+// ];
+// function getNames(data) {
+//   return data.map(({ name }) => name);
+// }
+// console.log(getNames(data));
+
+// function solution(nums) {
+//   if (!nums) return [];
+//   return [...nums].sort((a, b) => a - b);
+// }
+// solution([1, 2, 10, 50, 5]); // should return [1,2,5,10,50]
+// solution(null); // should return []
+
+// function removeUrlAnchor(url){
+//     const index = url.indexOf("#")
+//     if(index === -1) {
+//       return url;
+//     }
+//     return url.slice(0, index);
+//   }
+
+//   return url.split('#')[0];
+
+// function isLeapYear(year) {
+//   if (!(year % 400)) {
+//     return true;
+//   }
+//   if (!(year % 4) && year % 100) {
+//     return true;
+//   }
+//   return false;
+// }
+
+// function power(base, exponent){
+// if(exponent === 0){
+//     return 1;
+//   }
+//     if(exponent < 0){
+//       return 1 / power(base, exponent * -1)
+//     }
+//     let number = base;
+//     for(let i = 0; i < exponent - 1; i += 1){
+//       number *= base;
+//     }
+//     return number;
+//   }
+
+// function power(base, exponent){
+
+//     if(exponent < 0){
+//       return 1 / power(base, exponent * -1)
+//     }
+//     let number = 1;
+//     for(let i = 0; i < exponent; i += 1){
+//       number *= base;
+//     }
+//     return number;
+// }
+
+//   This kata is based on: Exponent Method
+
+// Create a method called power that takes two integers and returns the value of the first argument raised to the power of the second.
+
+// Unlike the Exponent Method, you should also take in account negative exponents.
+
+// Your solution won't be tested against special cases leading to undefined values (0**-2 for example)
+
+// Note: The ** operator (JS: Math.pow) has been disabled.
+
+// Examples:
+
+// power(2, 3)   // 8
+// power(4, -2)  // 0.0625
+
+// function isPowerOfTwo(n){
+//     return Number.isInteger(Math.log2(n))
+//   }
+
+//   Complete the function power_of_two/powerOfTwo (or equivalent, depending on your language) that determines if a given non-negative integer is a power of two. From the corresponding Wikipedia entry:
+
+// a power of two is a number of the form 2n where n is an integer, i.e. the result of exponentiation with number two as the base and integer n as the exponent.
+
+// You may assume the input is always valid.
+
+// Examples
+// isPowerOfTwo(1024) // -> true
+// isPowerOfTwo(4096) // -> true
+// isPowerOfTwo(333)  // -> false
+// Beware of certain edge cases - for example, 1 is a power of 2 since 2^0 = 1 and 0 is not a power of 2
+
+// 1,000
+// 10,000
+// 100,000
+// 1,000,000
+
+// var numberToMoney = function (n) {
+//   const newNumber = String(n).split(".");
+//   if (newNumber[1].length > 2) {
+//     newNumber[1] = newNumber[1].slice(0, 2);
+//   }
+//   if (newNumber[1][1] === "0") {
+//     newNumber[1] = newNumber[1].slice(0, 1);
+//   }
+//   newNumber[0] = new Intl.NumberFormat("en-US").format(newNumber[0]);
+//   if (newNumber[1] === "0" || newNumber[1] === "00") {
+//     return newNumber[0];
+//   }
+//   return newNumber.join(".");
+
+//   //   return Number.parseInt(formatCurrency);
+// };
+// // numberToMoney(10.2134);
+// console.log(numberToMoney(50495.1));
+
+// const numberToMoney = (n) => (Math.floor(n * 100) / 100).toLocaleString();
+
+// var isSquare = function (n) {
+//   if (n < 0) {
+//     return false;
+//   }
+//   if (n === 0) {
+//     return true;
+//   }
+//   const sqrt = Math.sqrt(n);
+//   return Number.isInteger(sqrt);
+// };
+
+// isSquare(25);
+
+// function getCount(str) {
+//   const vowels = ["a", "e", "i", "o", "u"];
+//   let total = 0;
+//   str.split("").forEach((element) => {
+//     if (vowels.includes(element)) {
+//       total += 1;
+//     }
+//   });
+//   return total;
+// }
+// console.log(getCount("abracadabra"));
+
+// розвязати за допомгою редюса
+
+// function getCount(str) {
+//   const vowels = ["a", "e", "i", "o", "u"];
+//   return str.split("").reduce((previousValue, element) => {
+//     if (vowels.includes(element)) {
+//       return previousValue + 1;
+//     }
+//     return previousValue;
+//   }, 0);
+// }
+// console.log(getCount("abracadabra"));
+
+// function movie(card, ticket, perc) {
+//   let a = 0;
+//   let b = card;
+//   let count = 0;
+//   while (Math.ceil(b) >= a) {
+//     a += ticket;
+//     b += ticket * Math.pow(perc, ++count);
+//   }
+//   return count;
+// }
+
+// console.log(movie(100, 10, 0.95));
+
+// function makePassword(phrase) {
+//   const array = phrase.split(" ");
+//   let password = "";
+//   array.forEach((element) => {
+//     if (element[0].toLowerCase() === "i") {
+//       password += 1;
+//     } else if (element[0].toLowerCase() === "o") {
+//       password += 0;
+//     } else if (element[0].toLowerCase() === "s") {
+//       password += 5;
+//     } else {
+//       password += element[0];
+//     }
+//   });
+//   console.log(password);
+// }
+// console.log(makePassword("Give me liberty or give me death"));
+
+// const user = { name: "mango", age: 21 };
+// const userName = "email";
+// console.log(user[userName]);
+
+// function makePassword(phrase) {
+//   const passwordNumbers = { i: 1, o: 0, s: 5 };
+//   const array = phrase.split(" ");
+//   let password = "";
+//   array.forEach((element) => {
+//     const letter = element[0].toLowerCase();
+//     console.log(passwordNumbers[letter]);
+//     if (passwordNumbers[letter] >= 0) {
+//       password += passwordNumbers[letter];
+//     } else {
+//       password += element[0];
+//     }
+//   });
+//   return password;
+// }
+// console.log(makePassword("Give me liberty or give me death"));
+
+// function makePassword(phrase) {
+//   const passwordNumbers = { i: 1, o: 0, s: 5 };
+//   const array = phrase.split(" ");
+//   const newArray = array.map((element) => {
+//     const letter = element[0].toLowerCase();
+//     if (passwordNumbers[letter] >= 0) {
+//       return passwordNumbers[letter];
+//     } else {
+//       return element[0];
+//     }
+//   });
+
+//   return newArray.join("");
+// }
+// console.log(makePassword("Give me liberty or give me death"));
+
+// function makePassword(phrase) {
+//   const passwordNumbers = { i: 1, o: 0, s: 5 };
+//   const array = phrase.split(" ");
+//   const password = array.reduce((previousValue, element) => {
+//     const letter = element[0].toLowerCase();
+//     if (passwordNumbers[letter] >= 0) {
+//       return previousValue + passwordNumbers[letter];
+//     } else {
+//       return previousValue + element[0];
+//     }
+//   }, "");
+
+//   return password;
+// }
+// console.log(makePassword("Give me liberty or give me death"));
+
+// function gps(s, x) {
+//   if (x.length <= 1) {
+//     return 0;
+//   }
+//   let output = [];
+//   for (let i = 0; i < x.length - 1; i += 1) {
+//     output.push(Math.floor(((x[i + 1] - x[i]) * 3600) / s));
+//   }
+
+//   return Math.max(...output);
+// }
+// const x = [
+//   0.0, 0.11, 0.22, 0.33, 0.44, 0.65, 1.08, 1.26, 1.68, 1.89, 2.1, 2.31, 2.52,
+//   3.25,
+// ];
+// const s = 12;
+// const u = 219;
+// gps(s, x);
+
+// function printerError(s) {
+//   let count = 0;
+//   for (let i = 0; i < s.length; i += 1) {
+//     if (s[i].charCodeAt(0) > 109) {
+//       count += 1;
+//     }
+//   }
+//   return `${count}/${s.length}`;
+// }
+// var s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+// printerError(s);
+
+// function longest(s1, s2) {
+//   return [...s1, ...s2]
+//     .filter((element, index, array) => array.indexOf(element) === index)
+//     .sort((a, b) => a.localeCompare(b))
+//     .join("");
+// }
+// console.log(longest("aretheyhere", "yestheyarehere"));
+
+function tripleX(str) {
+  const index = str.indexOf("x");
+  if (index === -1) {
+    return false;
+  }
+  const newString = str.slice(index, index + 3);
+  if (newString.length < 3) {
+    return false;
+  }
+  for (let i = 0; i < newString.length; i += 1) {
+    if (newString[i] !== "x") {
+      return false;
+    }
+  }
+  return true;
 }
-console.log(digitalRoot(1636255));
+console.log(tripleX("kittykittykittyx"));
