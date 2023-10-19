@@ -659,20 +659,175 @@
 // }
 // console.log(longest("aretheyhere", "yestheyarehere"));
 
-function tripleX(str) {
-  const index = str.indexOf("x");
-  if (index === -1) {
-    return false;
-  }
-  const newString = str.slice(index, index + 3);
-  if (newString.length < 3) {
-    return false;
-  }
-  for (let i = 0; i < newString.length; i += 1) {
-    if (newString[i] !== "x") {
-      return false;
-    }
-  }
-  return true;
+// function tripleX(str) {
+//   const index = str.indexOf("x");
+//   if (index === -1) {
+//     return false;
+//   }
+//   const newString = str.slice(index, index + 3);
+//   if (newString.length < 3) {
+//     return false;
+//   }
+//   for (let i = 0; i < newString.length; i += 1) {
+//     if (newString[i] !== "x") {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(tripleX("kittykittykittyx"));
+
+// const mango = { name: "mango" };
+// const userName = "name";
+// console.log(mango[userName]);
+//  коли ключ знаходиться в змінній до обєкта звертаємось через квадратні дужки.
+// function quicksum(packet) {
+//   const letters = {
+//     A: 1,
+//     B: 2,
+//     C: 3,
+//     D: 4,
+//     E: 5,
+//     F: 6,
+//     G: 7,
+//     H: 8,
+//     I: 9,
+//     J: 10,
+//     K: 11,
+//     L: 12,
+//     M: 13,
+//     N: 14,
+//     O: 15,
+//     P: 16,
+//     Q: 17,
+//     R: 18,
+//     S: 19,
+//     T: 20,
+//     U: 21,
+//     V: 22,
+//     W: 23,
+//     X: 24,
+//     Y: 25,
+//     Z: 26,
+//   };
+//   let total = 0;
+//   for (let i = 0; i < packet.length; i += 1) {
+//     const symbol = packet[i];
+//     if (symbol === " ") {
+//       continue;
+//     }
+//     if (letters[symbol]) {
+//       total += letters[symbol] * (i + 1);
+//       continue;
+//     }
+//     return 0;
+//   }
+//   return total;
+// }
+// console.log(quicksum("A C M"));
+
+/*
+? Створіть масив genres з елементами Jazz і Blues.
+? Додайте "rock'n'roll" до кінця.
+? Виведіть у консоль перший елемент масиву.
+? Виведіть у консоль останній елемент масиву. Код має працювати для масиву довільної довжини.
+? Видаліть перший елемент та виведіть його в консоль.
+? Вставте "Country" та "Reggy" на початок масиву.
+ */
+
+// const genres = ["jazz", "Blues"];
+// genres.splice(2, 0, "rock'n'roll");
+// genres.unshift("Country", "Reggy");
+// console.log(genres);
+
+// function newAvg(arr, newavg) {
+//   let total = arr.reduce((previousValue, element) => {
+//     return previousValue + element;
+//   }, 0);
+//   const result = newavg * (arr.length + 1) - total;
+//   if (result <= 0) {
+//     throw new Error("Expected New Average is too low");
+//   }
+//   return Math.ceil(result);
+// }
+// newAvg([14, 30, 5, 7, 9, 11, 15], 2);
+
+// function tripleShiftian(base, n) {
+//   for (let i = 2; i < n; i += 1) {
+//     base.push(4 * base[i] - 5 * base[i - 1] + 3 * base[i - 2]);
+//   }
+//   return base[n];
+// }
+// tripleShiftian([1, 2, 3], 35);
+
+// function findDeletedNumber(arr, mixArr) {
+//   const sortedArr = [...mixArr].sort((a, b) => a - b);
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr[i] !== sortedArr[i]) {
+//       return arr[i];
+//     }
+//   }
+//   return 0;
+// }
+// console.log(
+//   findDeletedNumber([1, 2, 3, 4, 5, 6, 7, 8, 9], [5, 7, 6, 9, 4, 8, 1, 2, 3])
+// );
+
+// function findDeletedNumber(arr, mixArr) {
+//   return (
+//     arr.find((element) => {
+//       if (mixArr.includes(element)) {
+//         return false;
+//       }
+//       return true;
+//     }) || 0
+//   );
+// }
+// console.log(
+//   findDeletedNumber([1, 2, 3, 4, 5, 6, 7, 8, 9], [7, 6, 9, 4, 8, 1, 2, 3])
+// );
+
+// function findDeletedNumber(arr, mixArr) {
+//   return arr.find((element) => !mixArr.includes(element)) || 0;
+// }
+// console.log(
+//   findDeletedNumber([1, 2, 3, 4, 5, 6, 7, 8, 9], [7, 6, 9, 4, 8, 1, 2, 3])
+// );
+
+// function findDeletedNumber(arr, mixArr) {
+//   const totalArray = arr.reduce(
+//     (previousValue, element) => previousValue + element,
+//     0
+//   );
+//   const totalMixArray = mixArr.reduce(
+//     (previousValue, element) => previousValue + element,
+//     0
+//   );
+//   return totalArray - totalMixArray;
+// }
+// console.log(findDeletedNumber([1, 2, 3], [1, 2]));
+
+// function betweenExtremes(numbers) {
+//   const max = Math.max(...numbers);
+//   const min = Math.min(...numbers);
+//   return max - min;
+// }
+// betweenExtremes([21, 34, 54, 43, 26, 12]), 42;
+
+// function betweenExtremes(numbers) {
+//   const sortedNumbers = [...numbers].sort((a, b) => a - b);
+//   return sortedNumbers[sortedNumbers.length - 1] - sortedNumbers[0];
+// }
+// betweenExtremes([21, 34, 54, 43, 26, 12]), 42;
+
+function vertMirror(strng) {
+  return [...strng].reverse().join("");
 }
-console.log(tripleX("kittykittykittyx"));
+function horMirror(strng) {
+  return strng.split("\n").reverse().join("\n");
+}
+function oper(fct, s) {
+  return fct(s);
+}
+
+console.log(JSON.parse("abraca/\ndabra"));
