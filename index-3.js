@@ -820,14 +820,14 @@
 // }
 // betweenExtremes([21, 34, 54, 43, 26, 12]), 42;
 
-function vertMirror(strng) {
-  return [...strng].reverse().join("");
-}
-function horMirror(strng) {
-  return strng.split("\n").reverse().join("\n");
-}
-function oper(fct, s) {
-  return fct(s);
-}
+// function vertMirror(strng) {
+//     return strng.map((element) => [...element].reverse().join(""))
+//   }
+//   function horMirror(strng) {
+//     return strng.reverse()
+//   }
+//   function oper(fct, s) {
+//     return fct(s.split("\n")).join("\n");
+//   }
 
-console.log(JSON.parse("abraca/\ndabra"));
+// console.log(JSON.parse("abraca/\ndabra"));
