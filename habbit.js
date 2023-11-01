@@ -42,8 +42,6 @@
 //     "IV",
 //     "I",
 //   ];
-////////////////////
-
 //   let result = "";
 //   for (let i = 0; i <= decimals.length; i += 1) {
 //     console.log(roman[i]);
@@ -100,98 +98,6 @@
 // genres.splice(0, 0, "country");
 // console.log(genres);
 
-// function getIssuer(number) {
-//     const cards = [
-//       {
-//         name: 'AMEX',
-//         beginWith: [34, 37],
-//         totalLength: [15]
-//       },
-//       {
-//         name: 'Discover',
-//         beginWith: [6011],
-//         totalLength: [16]
-//       },
-//       {
-//         name: 'Mastercard',
-//         beginWith: [51, 52, 53, 54, 55],
-//         totalLength: [16]
-//       },
-//           {
-//         name: 'VISA',
-//         beginWith: [4],
-//         totalLength: [13, 16]
-//       }
-//     ]
-//     const strCardNumber = String(number)
-//     const card = cards.find(card =>
-//       card.beginWith.some(num => isStartsWith(strCardNumber, num)) &&
-//       card.totalLength.some(total => total === strCardNumber.length)
-//     )
-
-//     return card ? card.name : 'Unknown'
-//   }
-
-// function mirror(code, string) {
-//   if (string === "") {
-//     return code.toLowerCase();
-//   }
-//   if (string?.trim() === "*") {
-//     return code.replaceAll(" ", "*");
-//   }
-
-//   if (string === "+-*/=") {
-//     return code.toLowerCase();
-//   }
-
-//   let alph = {
-//     a: "z",
-//     b: "y",
-//     c: "x",
-//     d: "w",
-//     e: "v",
-//     f: "u",
-//     g: "t",
-//     h: "s",
-//     i: "r",
-//     j: "q",
-//     k: "p",
-//     l: "o",
-//     m: "n",
-//     n: "m",
-//     o: "l",
-//     p: "k",
-//     q: "j",
-//     r: "i",
-//     s: "h",
-//     t: "g",
-//     u: "f",
-//     v: "e",
-//     w: "d",
-//     x: "c",
-//     y: "b",
-//     z: "a",
-//   };
-//   if (string) {
-//     alph = {};
-//     for (let i = 0; i < string.length; i += 1) {
-//       alph[string[i]] = string[string.length - 1 - i];
-//     }
-//   }
-//   console.log(alph);
-//   let reversedMessage = "";
-//   for (let i = 0; i < code.length; i += 1) {
-//     if (alph[code[i].toLowerCase()]) {
-//       reversedMessage += alph[code[i].toLowerCase()];
-//     } else {
-//       reversedMessage += code[i].toLowerCase();
-//     }
-//   }
-//   return reversedMessage;
-// }
-// console.log(mirror("Sd4--8srs*Z6M", ""));
-//9/kph7b6rk*zl53af6dy
-
 // function replicate(times, number) {
 //   if (times <= 0) {
 //     return [];
@@ -204,36 +110,16 @@
 // }
 // console.log(Array(3));
 
-// const intDiff = (arr, n) => {
-//   let count = 0;
-//   for (let i = 0; i < arr.length; i += 1) {
-//     for (let j = i + 1; j < arr.length; j += 1) {
-//     //   console.log(Math.abs(arr[j] - arr[i]) === n);
-//       if (Math.abs(arr[j] - arr[i]) === n) {
-//         count += 1;
-//       }
-//     }
+// function reOrdering(text) {
+//   if (text[0] === text[0].toUpperCase()) {
+//     return text;
 //   }
-//   return count;
-// };
-// console.log(intDiff([1, 1, 5, 6, 9, 16, 27], 4));
-
-// const binaryArrayToNumber = (arr) => {
-//   return parseInt(arr.join(""), 2);
-// };
-
-// console.log(binaryArrayToNumber([1, 1, 1, 1]));
-
-function reOrdering(text) {
-  if (text[0] === text[0].toUpperCase()) {
-    return text;
-  }
-  const words = text.split(" ");
-  const capitalWord = words.find(
-    (element) => element[0] === element[0].toUpperCase()
-  );
-  const anotherWords = words.filter((word) => word !== capitalWord);
-  //   console.log(capitalWord + " " + anotherWords.join(" "));
-  return [capitalWord, ...anotherWords].join(" ");
-}
-console.log(reOrdering("wario LoBan hello"));
+//   const words = text.split(" ");
+//   const capitalWord = words.find(
+//     (element) => element[0] === element[0].toUpperCase()
+//   );
+//   const anotherWords = words.filter((word) => word !== capitalWord);
+//   //   console.log(capitalWord + " " + anotherWords.join(" "));
+//   return [capitalWord, ...anotherWords].join(" ");
+// }
+// console.log(reOrdering("wario LoBan hello"));

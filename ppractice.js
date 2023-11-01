@@ -328,3 +328,126 @@
 //   return [...leftWing, ...rightWing];
 // }
 // console.log(makeValley([17, 17, 15, 14, 8, 7, 7, 5, 4, 4, 1]));
+
+// function replicate(times, number) {
+// 	if(times <= 0) {
+//     return [];
+//   }
+//   const newArray = []
+//   for(let i = 0; i < times; i += 1) {
+//     newArray.push(number)
+//   }
+//   return newArray
+// }
+
+// function mirror(code, string) {
+//   if (string === "") {
+//     return code.toLowerCase();
+//   }
+//   if (string?.trim() === "*") {
+//     return code.replaceAll(" ", "*");
+//   }
+
+//   if (string === "+-*/=") {
+//     return code.toLowerCase();
+//   }
+
+//   let alph = {
+//     a: "z",
+//     b: "y",
+//     c: "x",
+//     d: "w",
+//     e: "v",
+//     f: "u",
+//     g: "t",
+//     h: "s",
+//     i: "r",
+//     j: "q",
+//     k: "p",
+//     l: "o",
+//     m: "n",
+//     n: "m",
+//     o: "l",
+//     p: "k",
+//     q: "j",
+//     r: "i",
+//     s: "h",
+//     t: "g",
+//     u: "f",
+//     v: "e",
+//     w: "d",
+//     x: "c",
+//     y: "b",
+//     z: "a",
+//   };
+//   if (string) {
+//     alph = {};
+//     for (let i = 0; i < string.length; i += 1) {
+//       alph[string[i]] = string[string.length - 1 - i];
+//     }
+//   }
+//   console.log(alph);
+//   let reversedMessage = "";
+//   for (let i = 0; i < code.length; i += 1) {
+//     if (alph[code[i].toLowerCase()]) {
+//       reversedMessage += alph[code[i].toLowerCase()];
+//     } else {
+//       reversedMessage += code[i].toLowerCase();
+//     }
+//   }
+//   return reversedMessage;
+// }
+// console.log(mirror("Sd4--8srs*Z6M", ""));
+//9/kph7b6rk*zl53af6dy
+
+// const intDiff = (arr, n) => {
+//   let count = 0;
+//   for (let i = 0; i < arr.length; i += 1) {
+//     for (let j = i + 1; j < arr.length; j += 1) {
+//     //   console.log(Math.abs(arr[j] - arr[i]) === n);
+//       if (Math.abs(arr[j] - arr[i]) === n) {
+//         count += 1;
+//       }
+//     }
+//   }
+//   return count;
+// };
+// console.log(intDiff([1, 1, 5, 6, 9, 16, 27], 4));
+
+// const binaryArrayToNumber = (arr) => {
+//   return parseInt(arr.join(""), 2);
+// };
+
+// console.log(binaryArrayToNumber([1, 1, 1, 1]));
+
+// function getIssuer(number) {
+//     const cards = [
+//       {
+//         name: 'AMEX',
+//         beginWith: [34, 37],
+//         totalLength: [15]
+//       },
+//       {
+//         name: 'Discover',
+//         beginWith: [6011],
+//         totalLength: [16]
+//       },
+//       {
+//         name: 'Mastercard',
+//         beginWith: [51, 52, 53, 54, 55],
+//         totalLength: [16]
+//       },
+//           {
+//         name: 'VISA',
+//         beginWith: [4],
+//         totalLength: [13, 16]
+//       }
+//     ]
+//     const strCardNumber = String(number)
+//     const card = cards.find(card =>
+//       card.beginWith.some(num => isStartsWith(strCardNumber, num)) &&
+//       card.totalLength.some(total => total === strCardNumber.length)
+//     )
+
+//     return card ? card.name : 'Unknown'
+//   }
