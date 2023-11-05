@@ -331,3 +331,90 @@
 // console.log(
 //   fifa({ Home: "£75", Away: "£5000", Draw: "£1324" }, ["1-0", "2-3", "0-1"])
 // );
+
+// const number1 = [[1, 2], [3, 4], []];
+// const array = number1.flatMap((element) => element).sort((a, b) => a - b);
+// // const array = [].concat(...number1);
+// console.log(array);
+
+// function meeting(x) {
+//   const index = x.indexOf("O");
+//   return index === -1 ? "None available!" : index;
+// }
+// console.log(meeting(["X", "O", "X"]));
+
+// function trouble(x, t) {
+//   for (let i = 0; i < x.length; i += 1) {
+//     let total = x[i] + x[i + 1];
+//     if (total === t) {
+//       x.splice(i + 1, 1);
+//       i -= 1;
+//     }
+//   }
+//   return x;
+// }
+// console.log(trouble([1, 3, 5, 6, 7, 4, 3], 7));
+
+// function crap(x, bags, cap) {
+//   const newArray = x.reduce(
+//     (previousValue, element) => previousValue.concat(element),
+//     []
+//   );
+//   const isDog = newArray.includes("D");
+//   if (isDog) {
+//     return "Dog!!";
+//   }
+//   let totalCrap = newArray.filter((element) => element === "@").length;
+//   return bags * cap - totalCrap > 0 ? "Clean" : "Cr@p";
+// }
+// console.log(
+//   crap(
+//     [
+//       ["_", "_", "_", "_"],
+//       ["_", "_", "_", "@"],
+//       ["_", "_", "@", "_"],
+//     ],
+//     2,
+//     2
+//   )
+// );
+
+// function cake(x, y) {
+//   const total = y.split("").reduce((previousValue, element, index) => {
+//     if (index % 2 === 0) {
+//       return previousValue + element.charCodeAt(0);
+//     }
+//     return previousValue + element.charCodeAt(0) - 96;
+//   }, 0);
+
+//   return total > x * 0.7 ? "Fire!" : "That was close!";
+// }
+// console.log(cake(499, "kksimy"));
+
+// function present(x, y) {
+//   if (x === "badpresent") {
+//     return "Take this back!";
+//   }
+//   if (x === "dog") {
+//     return `pass out from excitement ${y} times`;
+//   }
+//   if (x === "crap" || x == "empty") {
+//     return x.split("").sort().join("");
+//   }
+//   if (x === "bang") {
+//     return x
+//       .split("")
+//       .reduce(
+//         (previousValue, element) => previousValue + element.charCodeAt(0) - y,
+//         0
+//       );
+//   }
+//   return x
+//     .split("")
+//     .reduce(
+//       (previousValue, element) =>
+//         previousValue + String.fromCharCode(element.charCodeAt(0) + y),
+//       ""
+//     );
+// }
+// present("badpresent", 3);
