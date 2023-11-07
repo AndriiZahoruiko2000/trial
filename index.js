@@ -242,12 +242,7 @@
 // const uniqueWords = [];
 
 // for (let i = 0; i < words.length; i += 1) {
-// console.log("index", i);
-// console.log("indexOf", words.indexOf(words[i]));
-// console.log("element", words[i]);
-// console.log("---------");
 //   if (i === words.indexOf(words[i])) {
-//     console.log("element", words[i]);
 //     uniqueWords.push(words[i]);
 //   }
 // }

@@ -177,12 +177,12 @@
 // const reverseString = array.join("");
 // console.log(reverseString);
 
-const employees = ["Dennis", "Dennis", "Shaw", "Watkins", "Watkins", "Ray"];
+// const employees = ["Dennis", "Dennis", "Shaw", "Watkins", "Watkins", "Ray"];
 
-const uniqueWords = [];
+// const uniqueWords = [];
 
-for (let i = 0; i < employees.length; i += 1) {
-  if (i === employees.indexOf(employees[i])) uniqueWords.push(employees[i]);
-}
+// for (let i = 0; i < employees.length; i += 1) {
+//   if (i === employees.indexOf(employees[i])) uniqueWords.push(employees[i]);
+// }
 
-console.log(uniqueWords);
+// console.log(uniqueWords);
