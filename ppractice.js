@@ -610,11 +610,103 @@
 // }
 // console.log(stringMerge("12345654321", "123456789", "6"));
 
-function generateShape(integer) {
-  const array = [];
-  for (let i = 0; i < integer; i += 1) {
-    array.push("+".repeat(integer));
-  }
-  return array.join("\n");
-}
-generateShape(8);
+// function generateShape(integer) {
+//   const array = [];
+//   for (let i = 0; i < integer; i += 1) {
+//     array.push("+".repeat(integer));
+//   }
+//   return array.join("\n");
+// }
+// generateShape(8);
+
+// function solve(a) {
+//   let even = [];
+//   let odd = [];
+//   a.forEach((element) => {
+//     const isNumber = Number(element);
+//     if (isNaN(isNumber)) {
+//       return;
+//     }
+//     if (isNumber % 2 === 0) {
+//       even.push(isNumber);
+//     }
+//     if (isNumber % 2 !== 0) {
+//       odd.push(isNumber);
+//     }
+//   });
+//   return even.length - odd.length;
+// }
+// console.log(solve([1, "a", 17, 8, "e", 3, "i", 12, 1]));
+
+// function kira(a, b, c) {
+//   const remain = [];
+//   a.forEach((element, index) => {
+//     remain.push(element % b[index]);
+//   });
+//   const maxNumber = Math.max(...remain);
+//   return c[!(maxNumber % 2) ? "toLowerCase" : "toUpperCase"]();
+// }
+// console.log(kira([16, 16], [10, 5], "Doctor"));
+
+// function scanningSkies(arr) {
+//   const sorted = [...arr]
+//     .sort((a, b) => b.dist - a.dist || a.price - b.price)
+//     .map((element) => element.dest);
+//   return sorted;
+// }
+// console.log(
+//   scanningSkies([
+//     { dest: "ATL", dist: 1300, price: 220 },
+//     { dest: "PEK", dist: 7000, price: 703 },
+//     { dest: "DXB", dist: 9000, price: 945 },
+//     { dest: "LAX", dist: 1300, price: 157 },
+//   ])
+// );
+
+// function isTuringEquation(s) {
+//   const array = s.replace("+", "=").split("=");
+//   const number1 = array[0].split("").reverse().join("") * 1;
+//   const number2 = array[1].split("").reverse().join("") * 1;
+//   const number3 = array[2].split("").reverse().join("") * 1;
+//   return number1 + number2 === number3;
+//   console.log(number1);
+// }
+// isTuringEquation("73+42=16");
+
+// function bingo(a) {
+//   const array = [];
+//   for (let i = 0; i < a.length; i += 1) {
+//     if (a[i] === 7) {
+//       array.push("g");
+//     }
+//     if (a[i] === 2) {
+//       array.push("b");
+//     }
+//     if (a[i] === 9) {
+//       array.push("i");
+//     }
+//     if (a[i] === 14) {
+//       array.push("n");
+//     }
+//     if (a[i] === 15) {
+//       array.push("o");
+//     }
+//   }
+//   const string = array
+//     .filter((element, index, array) => array.indexOf(element) === index)
+//     .sort()
+//     .join("");
+//   return string === "bgino" ? "WIN" : "LOSE";
+// }
+// bingo([21, 13, 2, 7, 5, 14, 7, 15, 9, 10]);
+// bgino
+// 2,7,9,14,15
+
+// console.log("a".charCodeAt(0));
+// console.log(String.fromCharCode(97));
+
+// function evenNumbers(array, number) {
+//     return array.filter(number => !(number % 2)).slice(-number)
+//   }
+
+//   evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3), [4, 6, 8];

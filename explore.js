@@ -29,14 +29,14 @@
 //     "mango",
 //     "jujube",
 //   ];
-//   return fruits.reduce((previousValue, element) => {
+//   return fruits.reduce((acc, element) => {
 //     if (fruitsName.includes(element)) {
 //       const index = Math.round(element.length / 2);
 //       const word1 = element.slice(0, index);
 //       const word2 = element.slice(index);
-//       return [...previousValue, word1, word2];
+//       return [...acc, word1, word2];
 //     }
-//     return [...previousValue, element];
+//     return [...acc, element];
 //   }, []);
 // }
 // console.log(cutFruits(["apple", "pear", "banana", "bomb"]));
@@ -74,7 +74,7 @@
 //   }
 // }
 // getStars(7);
-///////////////////////////////////////
+/////////////////////////////////////
 
 //   ? Дано 90 хвилин, дізнайтесь скільки в даному числі міститься годин і хвилин.
 //   ? Результат виведіть у консоль.
