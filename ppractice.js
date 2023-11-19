@@ -710,3 +710,119 @@
 //   }
 
 //   evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3), [4, 6, 8];
+
+// function balancedNum(number) {
+//   if (number < 100) {
+//     return "Balanced";
+//   }
+//   const string1 = String(number);
+//   const length = string1.length / 2;
+//   if (length % 2 === 0) {
+//     const sum1 = string1
+//       .slice(0, length - 1)
+//       .split("")
+//       .reduce((acc, element) => acc + Number(element), 0);
+
+//     const sum2 = string1
+//       .slice(length + 1)
+//       .split("")
+//       .reduce((acc, element) => acc + Number(element), 0);
+//     return sum1 === sum2 ? "Balanced" : "Not Balanced";
+//   }
+//   const length2 = Math.floor(length);
+//   const sum1 = string1
+//     .slice(0, length2)
+//     .split("")
+//     .reduce((acc, element) => acc + Number(element), 0);
+//   const sum2 = string1
+//     .slice(length + 1)
+//     .split("")
+//     .reduce((acc, element) => acc + Number(element), 0);
+
+//   return sum1 === sum2 ? "Balanced" : "Not Balanced";
+// }
+// console.log(balancedNum(56239814));
+
+// function nthSmallest(arr, pos) {
+//   return [...arr].sort((a, b) => a - b)[pos - 1];
+//   console.log(sortedArr);
+// }
+// nthSmallest([-5, -1, -6, -18], 4);
+
+// function jumpingNumber(n) {
+//   const array = String(n).split("");
+//   const isJumping = array.every(
+//     (element, index, array) =>
+//       !index || Math.abs(element - array[index - 1]) === 1
+//   );
+//   return isJumping ? "Jumping!!" : "Not!!"
+
+// }
+// jumpingNumber(79);
+// console.log(1 == -1);
+
+// function maxProduct(numbers, size) {
+//   return [...numbers]
+//     .sort((a, b) => a - b)
+//     .slice(-size)
+//     .reduce((acc, element) => acc * element, 1);
+// }
+// maxProduct([4, 3, 5], 2);
+
+// function extraPerfect(n) {
+//   const newArray = [];
+//   for (let i = 1; i <= n; i += 2) {
+//     newArray.push(i);
+//   }
+//   return newArray;
+// }
+// extraPerfect(39);
+
+// function tidyNumber(n) {
+//   const array = String(n).split("");
+//   for (let i = 0; i < array.length - 1; i += 1) {
+//     if (array[i] <= array[i + 1]) {
+//       continue;
+//     } else {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// tidyNumber(9672);
+
+// function diagonal(matrix) {
+//   const array1 = [];
+//   const array2 = [];
+//   for (let i = 0; i < matrix.length; i += 1) {
+//     array1.push(matrix[i][i]);
+//     array2.push(matrix[i][matrix.length - 1 - i]);
+//   }
+//   const sum1 = array1.reduce((acc, element) => acc + element, 0);
+//   const sum2 = array2.reduce((acc, element) => acc + element, 0);
+//   return sum1 === sum2
+//     ? "Draw!"
+//     : sum1 > sum2
+//     ? "Principal Diagonal win!"
+//     : "Secondary Diagonal win!";
+// }
+
+// diagonal([
+//   [2, 2, 2],
+//   [4, 2, 6],
+//   [1, 8, 2],
+// ]);
+
+function minimumSteps(numbers, value) {
+  const sortedNim = [...numbers].sort((a, b) => a - b);
+  let total = 0;
+  for (let i = 0; i < sortedNim.length; i += 1) {
+    console.log(i);
+    total += sortedNim[i];
+    if (total >= value) {
+      return i;
+    }
+  }
+  return total;
+}
+console.log(minimumSteps([8, 9, 10, 4, 2], 23));
