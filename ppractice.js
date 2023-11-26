@@ -813,16 +813,240 @@
 //   [1, 8, 2],
 // ]);
 
-function minimumSteps(numbers, value) {
-  const sortedNim = [...numbers].sort((a, b) => a - b);
-  let total = 0;
-  for (let i = 0; i < sortedNim.length; i += 1) {
-    console.log(i);
-    total += sortedNim[i];
-    if (total >= value) {
-      return i;
-    }
-  }
-  return total;
+// function minimumSteps(numbers, value) {
+//   const sortedNim = [...numbers].sort((a, b) => a - b);
+//   let total = 0;
+//   for (let i = 0; i < sortedNim.length; i += 1) {
+//     console.log(i);
+//     total += sortedNim[i];
+//     if (total >= value) {
+//       return i;
+//     }
+//   }
+//   return total;
+// }
+// console.log(minimumSteps([8, 9, 10, 4, 2], 23));
+
+// function oddBall(arr) {
+// //
+//   return arr.includes(arr.indexOf("odd"))
+// }
+// oddBall([
+//   "even",
+//   4,
+//   "even",
+//   7,
+//   "even",
+//   55,
+//   "even",
+//   6,
+//   "even",
+//   9,
+//   "odd",
+//   3,
+//   "even",
+// ]);
+
+// function menFromBoys(arr) {
+//   const men = [];
+//   const boys = [];
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr[i] % 2 === 0) {
+//       men.push(arr[i]);
+//     } else {
+//       boys.push(arr[i]);
+//     }
+//   }
+//   men.sort((a, b) => a - b);
+//   boys.sort((a, b) => b - a);
+//   return [...men, ...boys].filter(
+//     (element, index, array) => array.indexOf(element) === index
+//   );
+// }
+// menFromBoys([7, 3, 14, 17]);
+
+// function myLanguages(results) {
+//   return Object.keys(results)
+//     .filter((element) => results[element] >= 60)
+//     .sort((a, b) => results[b] - results[a]);
+// }
+// console.log(myLanguages({ Java: 10, Ruby: 80, Python: 65 }));
+
+// function removeDuplicateWords(s) {
+//   return s
+//     .split(" ")
+//     .filter((element, index, array) => array.indexOf(element) === index)
+//     .join(" ");
+// }
+// removeDuplicateWords(
+//   "alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"
+// );
+
+// function queue(queuers, pos) {
+//   let wait = 0;
+//   for (let i = 0; i < queuers.length; i += 1) {
+//     console.log(queuers[pos]);
+//     if (i <= pos) {
+//       wait += Math.min(queuers[i], queuers[pos]);
+//     } else {
+//       wait += Math.min(queuers[i], queuers[pos] - 1);
+//     }
+//   }
+//   return wait;
+// }
+// queue([2, 5, 3, 6, 4], 2);
+
+// var shortenSpeech = function (str) {
+//   const array = str.split(" ");
+//   const newArray = [];
+//   const vowels = ["a", "o", "e", "i", "u", "y"];
+//   for (let i = 0; i < array.length; i += 1) {
+//     let x = array[i];
+//     if (x.length > 3) {
+//       for (let i = 3; i < x.length; i++) {
+//         if (vowels.includes(x[i])) {
+//           x = x.substring(0, i);
+//           x = x + ".";
+//           newArray.push(x);
+//           break;
+//         }
+//       }
+//     }
+//     newArray.push(array[i]);
+//   }
+//   return newArray.join(" ");
+
+// let vowels = ["a", "e", "i", "o", "u"];
+// let split = str.split(" ");
+// let shortened = split.map((x) => {
+//   if (x.length > 3) {
+//     for (let i = 3; i < x.length; i++) {
+//       if (vowels.includes(x[i])) {
+//         x = x.substring(0, i);
+//         x = x + ".";
+//         return x;
+//       }
+//     }
+//   }
+//   return x;
+// });
+// return shortened.join(" ");
+// };
+// console.log(shortenSpeech("Hello, do you want a coffee ? "));
+
+// var shortenSpeech = function (str) {
+//   const array = str.split(" ");
+//   const newArray = [];
+//   const vowels = ["a", "o", "u", "e", "i"];
+//   for (let i = 0; i < array.length; i += 1) {
+//     let x = array[i];
+//     if (x.length > 3) {
+//       for (let j = 3; j < x.length; j += 1) {
+//         if (vowels.includes(x[j])) {
+//           x = x.substring(0, j);
+//           x = x + ".";
+//         }
+//       }
+//     }
+//     newArray.push(x);
+//   }
+//   return newArray.join(" ");
+// };
+// console.log(shortenSpeech("Hello, do you want a coffee ? "));
+
+// var anyString = "Mozilla";
+
+// // Отобразит 'Moz'
+// console.log(anyString.substring(0, 3));
+// console.log(anyString.substring(3, ));
+
+// function solve(arr) {
+//   return arr.filter(
+//     (element, index, array) => array.lastIndexOf(element) === index
+//   );
+// }
+// solve([3, 4, 4, 3, 6, 3]);
+// function solve(arr){
+//   for (let i = 0; i < arr.length; i++) {
+
+//     for (let j = i + 1; j < arr.length; j++) {
+
+//       if (arr[i] === arr[j]) {
+//         arr.splice(i,1);
+//         --i
+//       };
+
+//     };
+
+//   };
+
+//   return arr;
+// }
+
+// function catchSignChange(arr) {
+//   let count = 0;
+//   for (let i = 0; i < arr.length; i += 1) {
+//     // arr[i] < 0 && arr[i + 1] >= 0
+//     // перевірили переход з мінуса на плюс
+//     if ((arr[i] < 0 && arr[i + 1] >= 0) || (arr[i] >= 0 && arr[i + 1] < 0)) {
+//       count += 1;
+//     }
+//   }
+//   return count;
+// }
+// catchSignChange[(-47, 84, -30, -11, -5, 74, 77)];
+
+// function canIMeasure(a, b, c) {
+//   let count = 0;
+//   for (let i = 0; i < 10000; i += 1) {
+//     count = (count + a) % b;
+//     if (count === c) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+// canIMeasure(3, 5, 4);
+
+// function solve(a, b) {
+//   const months = [0, 2, 4, 6, 7, 9, 11];
+//   let array = [];
+//   for (let i = a; i <= b; i += 1) {
+//     console.log(i);
+//     array = array.concat(
+//       months
+//         .map((element) => new Date(i, element, 1))
+//         .filter((element) => {
+//           return element.getDay() === 5;
+//         })
+//     );
+//   }
+//   return [
+//     array[0].toLocaleString("en-us", { month: "short" }),
+//     array[array.length - 1].toLocaleString("en-us", { month: "short" }),
+//     array.length,
+//   ];
+// }
+// console.log(solve(2016, 2020));
+
+function rapNameGen(dob) {
+  const array = dob.split("");
+  const averageDay = Math.ceil((Number(array[0]) + Number(array[1])) / 2);
+  const averageYear = Math.ceil(
+    (Number(array[array.length - 2]) + Number(array[array.length - 1])) / 2
+  );
+  const letters = {
+    0: "0ero",
+    1: "1ne",
+    2: "2wo",
+    3: "3hree",
+    4: "4our",
+    5: "5ive",
+    6: "6ix",
+    7: "7even",
+    8: "8ight",
+    9: "9ine",
+  };
+  return `${letters[averageDay]} ${letters[averageYear]}`;
 }
-console.log(minimumSteps([8, 9, 10, 4, 2], 23));
+console.log(rapNameGen("23.11.93"));
