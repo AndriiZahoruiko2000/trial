@@ -1029,24 +1029,309 @@
 // }
 // console.log(solve(2016, 2020));
 
-function rapNameGen(dob) {
-  const array = dob.split("");
-  const averageDay = Math.ceil((Number(array[0]) + Number(array[1])) / 2);
-  const averageYear = Math.ceil(
-    (Number(array[array.length - 2]) + Number(array[array.length - 1])) / 2
-  );
-  const letters = {
-    0: "0ero",
-    1: "1ne",
-    2: "2wo",
-    3: "3hree",
-    4: "4our",
-    5: "5ive",
-    6: "6ix",
-    7: "7even",
-    8: "8ight",
-    9: "9ine",
-  };
-  return `${letters[averageDay]} ${letters[averageYear]}`;
+// function rapNameGen(dob) {
+//   const array = dob.split("");
+//   const averageDay = Math.ceil((Number(array[0]) + Number(array[1])) / 2);
+//   const averageYear = Math.ceil(
+//     (Number(array[array.length - 2]) + Number(array[array.length - 1])) / 2
+//   );
+//   const letters = {
+//     0: "0ero",
+//     1: "1ne",
+//     2: "2wo",
+//     3: "3hree",
+//     4: "4our",
+//     5: "5ive",
+//     6: "6ix",
+//     7: "7even",
+//     8: "8ight",
+//     9: "9ine",
+//   };
+//   return `${letters[averageDay]} ${letters[averageYear]}`;
+// }
+// console.log(rapNameGen("23.11.93"));
+
+// function validate(username, password) {
+//   const length = Math.floor(Math.min(username.length / 2, password.length / 2));
+//   console.log(length);
+//   if (length === 0) {
+//     return false;
+//   }
+//   for (let i = 0; i < username.length - length + 1; i += 1) {
+//     console.log(username.substring(i, length));
+
+//     if (password.includes(username.substr(i, length))) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(validate("", ""));
+
+// function noonerize(numbers) {
+//     for(let i = 0; i < numbers.length; i +=1) {
+//         if(typeof numbers[i] !== "number") {
+//             return 'invalid array'
+
+//         }
+//     }
+//   const number1 = (String(numbers[0])[0] + String(numbers[1]).slice(1)) * 1;
+//   const number2 = (String(numbers[1])[0] + String(numbers[0]).slice(1)) * 1;
+//   return Math.abs(number1 - number2);
+//   console.log(number2);
+// }
+// noonerize([12, 34]);
+
+// function mxdiflg(a1, a2) {
+//   if (a1.length === 0 || a2.length === 0) {
+//     return -1;
+//   }
+//   const wordsLength1 = a1.map((element) => element.length);
+//   const wordsLength2 = a2.map((element) => element.length);
+//   return Math.max(
+//     Math.max(...wordsLength1) - Math.min(...wordsLength2),
+//     Math.max(...wordsLength2) - Math.min(...wordsLength1)
+//   );
+// }
+// var s1 = [
+//   "hoqq",
+//   "bbllkw",
+//   "oox",
+//   "ejjuyyy",
+//   "plmiis",
+//   "xxxzgpsssa",
+//   "xxwwkktt",
+//   "znnnnfqknaz",
+//   "qqquuhii",
+//   "dvvvwz",
+// ];
+// var s2 = ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"];
+// mxdiflg(s1, s2);
+
+// var isAnagram = function (test, original) {
+//   const sortedTest = [...test.toLowerCase()].sort().join("");
+//   const sortedOriginal = [...original.toLowerCase()].sort().join("");
+//   console.log(sortedTest, sortedOriginal);
+//   return sortedTest === sortedOriginal;
+// };
+// isAnagram("foefet", "toffee");
+
+// function sumDigits(number) {
+//   return String(Math.abs(number))
+//     .split("")
+//     .reduce((acc, element) => acc + Number(element), 0);
+// }
+// sumDigits(10);
+
+// function gimme(triplet) {
+//   const sortedArr = [...triplet].sort((a, b) => a - b);
+//   const element = sortedArr[1];
+//   return triplet.indexOf(sortedArr[1]);
+//   console.log(element);
+// }
+// gimme([-2, -3.2, 1]);
+
+// function squareDigits(num) {
+//   return Number(String(num)
+//     .split("")
+//     .map((element) => element * element)
+//     .join(""));
+// }
+// squareDigits(3212);
+
+// function isIsogram(str) {
+//   const array = str.toLowerCase().split("");
+//   for (let i = 0; i < array.length; i += 1) {
+//     if (array.indexOf(array[i]) !== array.lastIndexOf(array[i])) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// isIsogram("Dermatoglyphics");
+
+// function highAndLow(numbers) {
+// //   const sortedNum = numbers.split(" ").sort((a, b) => a - b);
+// //   return sortedNum[sortedNum.length - 1] + " " + sortedNum[0];
+// //   console.log(SortedNum);
+// cons
+// }
+// console.log(highAndLow("1 2 3"));
+
+// function roundToNext5(n) {
+//   if (n < 0 && n > -5) {
+//     return 0;
+//   }
+//   if (n === -5) {
+//     return n;
+//   }
+//   if (n < -5) {
+//     return n % 5 === 0 ? n : n + (5 - (n % 5)) - 5;
+//   }
+//   console.log(n % 5);
+//   return n % 5 === 0 ? n : n + (5 - (n % 5));
+// }
+// console.log(roundToNext5(-1994107));
+
+// function nbYear(p0, percent, aug, p) {
+//     let year = 0
+//   while(p0 < p) {
+//     p0 = p0 + (Math.floor(p0 * (percent / 100)) + aug);
+//     year += 1
+
+//   }
+//     return year
+//   }
+
+// function removeSmallest(numbers) {
+//     const sortedNum = [...numbers].sort((a, b) => a - b)
+//     const index = numbers.indexOf(sortedNum[0])
+//     const newNumbers = [...numbers]
+//     newNumbers.splice(index, 1)
+//     return newNumbers;
+//   }
+
+// function getMiddle(s) {
+//   const index = s.length % 2;
+//   console.log(index);
+//   if (index === 0) {
+//     return s.slice(s.length / 2 - 1, s.length / 2 + 1);
+//   }
+//   if (index !== 0) {
+//     return s.slice(Math.floor(s.length / 2), Math.floor(s.length / 2) + 1);
+//   }
+// }
+// console.log(getMiddle("testing"));
+
+// function stray(numbers) {
+//     return numbers.find((element, _ , array) => array.indexOf(element) === array.lastIndexOf(element))
+//   }
+//   stray([1, 1, 2])
+
+// function sumTriangularNumbers(n) {
+//     let total = 0
+//     for(let i = 0; i <= n; i += 1) {
+//       for(let j = 0; j <= i; j += 1) {
+//         total += j
+//       }
+//     }
+//     return total;
+//   }
+//   sumTriangularNumbers(34)
+
+// function dontGiveMeFive(start, end) {
+//   const newArray = [];
+//   for (let i = start; i <= end; i += 1) {
+//     if (String(i).includes(5)) {
+//       continue;
+//     }
+//     newArray.push(i);
+//   }
+//   console.log(newArray);
+//   return newArray.length;
+// }
+// console.log(dontGiveMeFive(4, 17));
+
+// function findLongest(array){
+//     function findLongest(array){
+//         return [...array].sort((a,b) => String(b).length - String(a).length)[0]
+//       }
+//   }
+//   findLongest([9000, 8, 800])
+
+// function oddOrEven(array) {
+//   //   let total = 0;
+//   //   array.forEach((element) => {
+//   //     total += element;
+//   //   });
+//   //   if (total === 0) {
+//   //     return "even";
+//   //   }
+//   //   if (total % 2 === 0) {
+//   //     return "even";
+//   //   } else {
+//   //     return "odd";
+//   //   }
+
+// //   let total = 0;
+// //   for (let i = 0; i < array.length; i += 1) {
+// //     total += array[i];
+// //   }
+// //   console.log(total);
+// }
+// console.log(oddOrEven([1023, 1, 2]));
+
+// function maxMultiple(divisor, bound) {
+//   let arr = [];
+//   for (let i = divisor; i <= bound; i += 1) {
+//     console.log();
+//     if (i % divisor == 0) {
+//       arr.push(i);
+//     }
+//   }
+//   return Math.max(...arr);
+// }
+// console.log(maxMultiple(37, 200));
+
+// function findShort(s) {
+//   const word = s.split(" ");
+//   const newString = [...word].sort((a, b) => a.length - b.length);
+//   return newString[0].length;
+// }
+// console.log(findShort("bitcoin take over the world maybe who knows perhaps"));
+
+// function removeUrlAnchor(url) {
+//   return url.split("#")[0];
+// }
+// console.log(removeUrlAnchor("www.codewars.com/katas/"));
+
+// function diagonalSum(matrix) {
+//   const array1 = [];
+//   for (let i = 0; i < matrix.length; i += 1) {
+//     array1.push(matrix[i][i]);
+//   }
+//   return array1.reduce((acc, element) => acc + element);
+// }
+// console.log(
+//   diagonalSum([
+//     [1, 2],
+//     [3, 4],
+//   ])
+// );
+
+// function getCount(str) {
+//   const vowels = ["a", "o", "e", "i", "u"];
+//   let count = 0;
+//   //   str.split("").forEach((element) => {
+//   //     if (vowels.includes(element)) {
+//   //       count += 1;
+//   //     }
+//   //   });
+
+//   //   return count;
+
+// //   const newStr = str.split("");
+// //   for (let i = 0; i < newStr.length; i += 1) {
+// //     if (vowels.includes(newStr[i])) {
+// //       count += 1;
+// //     }
+// //   }
+// //   return count;
+// }
+// console.log(getCount("abracadabra"));
+
+function wordSearch(word, text) {
+  const newText = text.split(" ");
+  for (let i = 0; i < newText.length; i += 1) {
+    console.log();
+    if (newText.includes(word)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
-console.log(rapNameGen("23.11.93"));
+const myText =
+  "what makes the desert beautiful, said the little prince is that somewhere it hides a well";
+
+console.log(wordSearch("beautiful", myText));
