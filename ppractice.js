@@ -1320,18 +1320,18 @@
 // }
 // console.log(getCount("abracadabra"));
 
-function wordSearch(word, text) {
-  const newText = text.split(" ");
-  for (let i = 0; i < newText.length; i += 1) {
-    console.log();
-    if (newText.includes(word)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-}
-const myText =
-  "what makes the desert beautiful, said the little prince is that somewhere it hides a well";
+// function wordSearch(word, text) {
+//   const newText = text.split(" ");
+//   for (let i = 0; i < newText.length; i += 1) {
+//     console.log();
+//     if (newText.includes(word)) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// }
+// const myText =
+//   "what makes the desert beautiful, said the little prince is that somewhere it hides a well";
 
-console.log(wordSearch("beautiful", myText));
+// console.log(wordSearch("beautiful", myText));
