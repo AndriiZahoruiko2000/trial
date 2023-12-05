@@ -1429,12 +1429,12 @@
 // }
 // console.log(ArithmeticSequenceSum(3, 2, 20));
 
-function trigrams(phrase) {
-  const arr = [];
-  for (let i = 0; i < phrase.length - 2; i += 1) {
-    console.log(i);
-    arr.push(phrase.slice(i, i + 3).replace(" ", "_"));
-  }
-  return arr.join(" ");
-}
-console.log(trigrams("the quick red"));
+// function trigrams(phrase) {
+//   const arr = [];
+//   for (let i = 0; i < phrase.length - 2; i += 1) {
+//     console.log(i);
+//     arr.push(phrase.slice(i, i + 3).replace(" ", "_"));
+//   }
+//   return arr.join(" ");
+// }
+// console.log(trigrams("the quick red"));
