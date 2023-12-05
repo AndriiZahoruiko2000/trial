@@ -1335,3 +1335,106 @@
 //   "what makes the desert beautiful, said the little prince is that somewhere it hides a well";
 
 // console.log(wordSearch("beautiful", myText));
+// "use strict";
+// const user = {
+//   name: "Mango",
+//   showName() {
+//     console.log(this.name);
+//   },
+// };
+// const showMessage = user.showName.bind(user);
+// console.log(showMessage === user.showName);
+// showMessage();
+// user.showName();
+
+// user.showMessage = showMessage;
+// console.log(user);
+// user.showMessage();
+
+// const ladder = {
+//   step: 0,
+//   up() {
+//     this.step += 1;
+//     return this;
+//   },
+//   showStep() {
+//     console.log(this.step);
+//   },
+//   down() {
+//     this.step -= 1;
+//     return this;
+//   },
+// };
+// ladder.up().up().up().down();
+// // ladder.up();
+// // ladder.down();
+// ladder.showStep();
+
+/*
+? Напишіть метод calcTotalPrice(stoneName), який приймає назву каменю, розраховує
+? та повертає загальну вартість каменів з таким ім'ям, ціною та кількістю з властивості stones.
+*/
+
+// const chopShop = {
+//   stones: [
+//     { name: "Emerald", price: 1300, quantity: 4 },
+//     { name: "Diamond", price: 2700, quantity: 3 },
+//     { name: "Sapphire", price: 1400, quantity: 7 },
+//     { name: "Ruby", price: 800, quantity: 2 },
+//   ],
+//   calcTotalPrice(stoneName) {
+//     const object = this.stones.find((stone) => stone.name === stoneName);
+//     return object.price * object.quantity;
+//   },
+// };
+
+// console.log(chopShop.calcTotalPrice("Emerald")); // 5200
+// console.log(chopShop.calcTotalPrice('Diamond')); // 8100
+// console.log(chopShop.calcTotalPrice('Sapphire')); // 9800
+// console.log(chopShop.calcTotalPrice('Ruby')); // 1600
+
+// const phoneBook = {
+//   contacts: [],
+//   addContact(newContact) {
+//     this.contacts.push({ ...newContact, id: this.generateId() });
+//   },
+//   getContacts() {
+//     return this.contacts;
+//   },
+//   generateId() {
+//     return "_" + Math.random().toString(36).substr(2, 9);
+//   },
+//   deleteContact(name) {
+//     this.contacts = this.contacts.filter((element) => element.name !== name);
+//   },
+// };
+// phoneBook.addContact({ name: "Andrii", number: "47839753829" });
+// phoneBook.addContact({ name: "Vasia", number: "47839753829" });
+// phoneBook.addContact({ name: "Ania", number: "47839753829" });
+// phoneBook.deleteContact("Vasia");
+// console.table(phoneBook.getContacts());
+
+// function ArithmeticSequenceSum(a, r, n) {
+//   let total = 0;
+//   for (let i = 0; i < n; i += 1) {
+//     // ЗАПУСКАЄМ КІЛЬКІСТЬ ІТЕРАЦІЙ В ЗАЛЕЖНОСТІ ВІД n
+//     total += a;
+//     //  НА КОЖНІЙ ННІЙ ІТЕРАЦІЙ ДОДАЄМ А ДО ТОТАЛ
+//     for (let j = 0; j < i; j += 1) {
+//         //  В ЗАЛЕЖНОСТІ ВІД НОМЕРА ІТЕРАЦІЇ ДОДАЄМО НОМЕР РАЗІВ ДО ТОТАЛ
+//       total += r;
+//     }
+//   }
+//   return total;
+// }
+// console.log(ArithmeticSequenceSum(3, 2, 20));
+
+function trigrams(phrase) {
+  const arr = [];
+  for (let i = 0; i < phrase.length - 2; i += 1) {
+    console.log(i);
+    arr.push(phrase.slice(i, i + 3).replace(" ", "_"));
+  }
+  return arr.join(" ");
+}
+console.log(trigrams("the quick red"));
