@@ -61,19 +61,19 @@
 // console.log(cutFruits(["apple", "pear", "banana", "bomb"]));
 //---------------------------------------------------------
 
-function maskify(cc) {
-  if (cc < 4) {
-    return cc;
-  }
-  let string = "";
-  for (let i = 0; i < cc.length; i += 1) {
-    if (i < cc.length - 4) {
-      string += "#";
-      continue;
-    }
-    console.log(cc[i]);
-    string += cc[i];
-  }
-  return string;
-}
-console.log(maskify("47834783473847343847384"));
+// function maskify(cc) {
+//   if (cc < 4) {
+//     return cc;
+//   }
+//   let string = "";
+//   for (let i = 0; i < cc.length; i += 1) {
+//     if (i < cc.length - 4) {
+//       string += "#";
+//       continue;
+//     }
+//     console.log(cc[i]);
+//     string += cc[i];
+//   }
+//   return string;
+// }
+// console.log(maskify("47834783473847343847384"));

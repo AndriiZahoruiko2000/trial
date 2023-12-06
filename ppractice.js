@@ -1438,3 +1438,120 @@
 //   return arr.join(" ");
 // }
 // console.log(trigrams("the quick red"));
+
+// function multiplyAndFilter(array, multiplier) {
+//   return array.reduce((acc, element) => {
+//     if (typeof element === "number") {
+//       return [...acc, element * multiplier];
+//     }
+//     return acc;
+//   }, []);
+// }
+// console.log(
+//   multiplyAndFilter(
+//     [1, null, function () {}, 2.5, "string", 10, undefined, {}, []],
+//     3
+//   )
+// );
+
+// function intRac(n, guess) {
+//   let steps = 0;
+//   while (true) {
+//     steps += 1;
+//     let newSteps = Math.floor((guess + Math.floor(n / guess)) / 2);
+//     console.log();
+//     if (Math.abs(guess - newSteps) < 1) {
+//       break;
+//     }
+//     guess = newSteps;
+//   }
+//   return steps;
+// }
+// console.log(intRac(25, 1));
+
+// function getSum(a, b) {
+//   let total = 0;
+//   for (let i = a < b ? a : b; i <= (a < b ? b : a); i += 1) {
+//     total += i;
+//   }
+//   return total;
+// }
+// console.log(getSum(0, -1));
+
+// function makePassword(phrase) {
+//   let password = "";
+//   for (let i = 0; i < phrase.length; i += 1) {
+//     if (phrase[i].toLowerCase() === "i") {
+//       password += 1;
+//       continue;
+//     }
+//     if (phrase[i].toLowerCase() === "o") {
+//       password += 0;
+//       continue;
+//     }
+//     if (phrase[i].toLowerCase() === "s") {
+//       password += 5;
+//       continue;
+//     }
+//     password += phrase[i];
+//   }
+//   const newPassword = password.split(" ");
+//   let result = [];
+//   for (let i = 0; i < newPassword.length; i += 1) {
+//     result += newPassword[i][0];
+//   }
+//   return result;
+//   const newPhrase = phrase
+//     .replaceAll("i", "1")
+//     .replaceAll("o", "0")
+//     .replaceAll("s", "5")
+//     .replaceAll("I", "1")
+//     .replaceAll("O", "0")
+//     .replaceAll("S", "5");
+//   const arr = newPhrase.split(" ");
+//   let result = [];
+//   for (let i = 0; i < arr.length; i += 1) {
+//     result += arr[i][0];
+//   }
+//   return result;
+// }
+// console.log(makePassword("Give me liberty or give me death"));
+
+// function printerError(s) {
+//   let count = 0;
+//   const arr = s.split("");
+//   for (let i = 0; i <= arr.length; i += 1) {
+//     if (arr[i] > "m") {
+//       count += 1;
+//     }
+//   }
+//   return count + "/" + s.length;
+// }
+// var s = "aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbmmmmmmmmmmmmmmmmmmmxyz";
+// console.log(printerError(s));
+
+// function longest(s1, s2) {
+//   return (s1 + s2)
+//     .split("")
+//     .filter((element, index, array) => array.indexOf(element) === index)
+//     .sort()
+//     .join("");
+// }
+// console.log(longest("aretheyhere", "yestheyarehere"));
+
+function findSpaceship(map) {
+  console.log(map);
+  const arr = map.split("\n").reverse();
+  for (let i = 0; i < arr.length; i += 1) {
+    const index = arr[i].indexOf("X");
+    if (index > -1) {
+      return [index, i];
+    }
+  }
+  return "Spaceship lost forever.";
+}
+console.log(
+  findSpaceship(
+    ".X........\n..........\n..........\n..........\n..........\n.........."
+  )
+);
