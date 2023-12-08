@@ -1539,19 +1539,122 @@
 // }
 // console.log(longest("aretheyhere", "yestheyarehere"));
 
-function findSpaceship(map) {
-  console.log(map);
-  const arr = map.split("\n").reverse();
-  for (let i = 0; i < arr.length; i += 1) {
-    const index = arr[i].indexOf("X");
-    if (index > -1) {
-      return [index, i];
-    }
-  }
-  return "Spaceship lost forever.";
+// function findSpaceship(map) {
+//   console.log(map);
+//   const arr = map.split("\n").reverse();
+//   for (let i = 0; i < arr.length; i += 1) {
+//     const index = arr[i].indexOf("X");
+//     if (index > -1) {
+//       return [index, i];
+//     }
+//   }
+//   return "Spaceship lost forever.";
+// }
+// console.log(
+//   findSpaceship(
+//     ".X........\n..........\n..........\n..........\n..........\n.........."
+//   )
+// );
+
+// if(a1.length === 0 || a2.length === 0){
+//     return -1
+//   }
+//     const word1 = [...a1].sort((a, b) => a.length - b.length)
+//     const word2 = [...a2].sort((a, b) => a.length - b.length)
+//     const result1 =  word1[word1.length - 1].length  - word2[0].length;
+//   const result2 = word2[word2.length - 1].length - word1[0].length;
+//   return Math.max(result1, result2)
+// mxdiflg(s1, s2)
+
+// function nbDig(n, d) {
+//   let count = "";
+//   for (let k = 0; k <= n; k += 1) {
+//     count += k ** 2;
+//   }
+//   return count.split(d).length - 1;
+// }
+// console.log(nbDig(10, 1));
+
+// function wallpaper(l, w, h) {
+//   const numbers = [
+//     "zero",
+//     "one",
+//     "two",
+//     "three",
+//     "four",
+//     "five",
+//     "six",
+//     "seven",
+//     "eight",
+//     "nine",
+//     "ten",
+//     "eleven",
+//     "twelve",
+//     "thirteen",
+//     "fourteen",
+//     "fifteen",
+//     "sixteen",
+//     "seventeen",
+//     "eighteen",
+//     "nineteen",
+//     "twenty",
+//   ];
+//   if (l * w * h === 0) {
+//     return "zero";
+//   }
+//   let count = Math.ceil(((l * h * 2 + w * h * 2) * 1.15) / 5.2);
+//   return numbers[count];
+// }
+// console.log(wallpaper(6.3, 4.5, 3.29));
+
+// function tripleX(str) {
+//   const index = str.indexOf("x");
+//   if (index === -1) {
+//     return false;
+//   }
+//   return index === str.indexOf("xxx");
+// }
+// console.log(tripleX("softx kitty, warm kitty, xxxxx"));
+
+// function quicksum(packet) {
+//   let string = 0;
+//   for (let i = 0; i < packet.length; i += 1) {
+//     const position = packet[i].charCodeAt(0) - 64;
+//     if (position === -32) {
+//       continue;
+//     }
+//     if (position < 1 || position > 26) {
+//       return 0;
+//     }
+//     string += position * (i + 1);
+//   }
+//   return string;
+// }
+// console.log(quicksum("MID CENTRAL"));
+
+// function newAvg(arr, newavg) {
+//   const total = arr.reduce((acc, element) => acc + element, 0);
+//   const donate = newavg * (arr.length + 1) - total;
+//   if (donate <= 0) {
+//     throw "Expected New Average is too low"
+//   }
+//   return Math.ceil(donate);
+// }
+// console.log(newAvg([14, 30, 5, 7, 9, 11, 16], 90));
+
+function makeValley(arr) {
+  const leftWing = [];
+  const rightWing = [];
+  arr
+    .sort((a, b) => b - a)
+    .forEach((element, index) => {
+      index % 2 == 0 ? leftWing.push(element) : rightWing.unshift(element);
+      if (index % 2 === 0) {
+        console.log(element);
+      } else {
+        console.log(element);
+      }
+    });
+  console.log(leftWing, rightWing);
 }
-console.log(
-  findSpaceship(
-    ".X........\n..........\n..........\n..........\n..........\n.........."
-  )
-);
+makeValley([17, 17, 15, 14, 8, 7, 7, 5, 4, 4, 1]);
