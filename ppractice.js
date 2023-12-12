@@ -1642,19 +1642,144 @@
 // }
 // console.log(newAvg([14, 30, 5, 7, 9, 11, 16], 90));
 
-function makeValley(arr) {
-  const leftWing = [];
-  const rightWing = [];
-  arr
-    .sort((a, b) => b - a)
-    .forEach((element, index) => {
-      index % 2 == 0 ? leftWing.push(element) : rightWing.unshift(element);
-      if (index % 2 === 0) {
-        console.log(element);
-      } else {
-        console.log(element);
-      }
-    });
-  console.log(leftWing, rightWing);
+// function makeValley(arr) {
+//   const leftWing = [];
+//   const rightWing = [];
+//   arr
+//     .sort((a, b) => b - a)
+//     .forEach((element, index) => {
+//       index % 2 == 0 ? leftWing.push(element) : rightWing.unshift(element);
+//       if (index % 2 === 0) {
+//         console.log(element);
+//       } else {
+//         console.log(element);
+//       }
+//     });
+//   console.log(leftWing, rightWing);
+// }
+// makeValley([17, 17, 15, 14, 8, 7, 7, 5, 4, 4, 1]);
+
+// const age = 23;
+// console.log(age.__proto__.__proto__ === Number.prototype.__proto__);
+// console.log(
+//   Number.prototype.__proto__.__proto__ === Object.prototype.__proto__
+// );
+// console.log(Object.prototype.__proto__);
+// console.log(age.__proto__.__proto__.__proto__);
+
+// class Invoker {}
+// class Od {}
+// class Lina {}
+// в них створити приватну властивість інтелект
+// створити клас інтелектуали і кожен воїн буде наслідуватись від цього класу
+// і додавати до властивості інтелект + 100
+// // також додати кожному воїну свої методи атаки
+// в кожного воїна повинно бути імя сила і який він наносить завдає збиток
+
+// function partlist(arr) {
+//   const newArr = [];
+//   for (let i = 1; i < arr.length; i += 1) {
+//     newArr.push([arr.slice(0, i).join(" "), arr.slice(i).join(" ")]);
+//   }
+//   return newArr;
+// }
+// console.log(partlist(["I", "wish", "I", "hadn't", "come"]));
+
+// function containAllRots(strng, arr) {
+//   for (let i = 0; i < strng.length; i += 1) {
+//     const newString = strng.slice(i) + strng.slice(0, i);
+//     if (!arr.includes(newString)) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+// console.log(
+//   containAllRots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"])
+// );
+// // спочатку bsjq
+// // sjqb
+// // jqbs
+// // qbsj
+
+// function getIssuer(number) {
+//   const newString = number.toString();
+//   if (
+//     (newString.startsWith("34") || newString.startsWith("37")) &&
+//     newString.length === 15
+//   ) {
+//     return "AMEX";
+//   }
+//   if (newString.startsWith("6011") && newString.length === 16) {
+//     return "Discover";
+//   }
+//   if (
+//     newString.startsWith("51") ||
+//     newString.startsWith("52") ||
+//     newString.startsWith("53") ||
+//     newString.startsWith("54") ||
+//     newString.startsWith("55") && newString.length === 16
+//   ) {
+//     return "Mastercard";
+//   }
+//   if (
+//     newString.startsWith("4") &&
+//     (newString.length === 13 || newString.length === 16)
+//   ) {
+//     return "VISA";
+//   }
+//     return "Unknown";
+// }
+// getIssuer(4111111111111111);
+
+const multipliers = {
+  gorillas: 9,
+  orangutans: 5,
+  chimpanzees: 3,
+  crew: 1,
+};
+
+function biteMeMonkey(primates, humans, terrain) {
+  let powerMonkey = Object.entries(primates).reduce((acc, [key, value]) => {
+    if (key === "hitPoints") {
+      return acc + value;
+    }
+    if (multipliers[key] !== undefined) {
+      //   console.log(multipliers[key] * value);
+      return acc + multipliers[key] * value;
+    }
+    if (key === "janeReporting4Duty" && value) {
+      return acc * (primates.chimpanzees / 2);
+    }
+    return acc;
+  }, 0);
+  let powerHumans = Object.values(humans).reduce((acc, element) => {
+    return acc + element;
+  }, 0);
+
+  if (terrain === "island") {
+    powerHumans += 20;
+  } else {
+    powerMonkey += 10;
+  }
+  console.log(powerHumans);
+  console.log(powerMonkey);
+
+  return powerMonkey >= powerHumans
+    ? "Abandon ship! Save your own skin and blame it on the 'modestly-sized' yacht!"
+    : "Everything's good, I'll see you in the office on Monday.";
 }
-makeValley([17, 17, 15, 14, 8, 7, 7, 5, 4, 4, 1]);
+
+console.log(
+  biteMeMonkey(
+    {
+      hitPoints: 10,
+      orangutans: 0,
+      chimpanzees: 0,
+      gorillas: 0,
+      janeReporting4Duty: false,
+    },
+    { hitPoints: 20, crew: 0 },
+    "sea"
+  )
+);

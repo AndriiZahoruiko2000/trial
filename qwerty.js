@@ -77,3 +77,5 @@
 //   return string;
 // }
 // console.log(maskify("47834783473847343847384"));
+
+console.log(Function._proto_ === Object.prototype);
