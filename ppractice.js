@@ -353,32 +353,32 @@
 //   }
 
 //   let alph = {
-//     a: "z",
-//     b: "y",
-//     c: "x",
-//     d: "w",
-//     e: "v",
-//     f: "u",
-//     g: "t",
-//     h: "s",
-//     i: "r",
-//     j: "q",
-//     k: "p",
-//     l: "o",
-//     m: "n",
-//     n: "m",
-//     o: "l",
-//     p: "k",
-//     q: "j",
-//     r: "i",
-//     s: "h",
-//     t: "g",
-//     u: "f",
-//     v: "e",
-//     w: "d",
-//     x: "c",
-//     y: "b",
-//     z: "a",
+// a: "z",
+// b: "y",
+// c: "x",
+// d: "w",
+// e: "v",
+// f: "u",
+// g: "t",
+// h: "s",
+// i: "r",
+// j: "q",
+// k: "p",
+// l: "o",
+// m: "n",
+// n: "m",
+// o: "l",
+// p: "k",
+// q: "j",
+// r: "i",
+// s: "h",
+// t: "g",
+// u: "f",
+// v: "e",
+// w: "d",
+// x: "c",
+// y: "b",
+// z: "a",
 //   };
 //   if (string) {
 //     alph = {};
@@ -1732,54 +1732,158 @@
 // }
 // getIssuer(4111111111111111);
 
-const multipliers = {
-  gorillas: 9,
-  orangutans: 5,
-  chimpanzees: 3,
-  crew: 1,
-};
+// const multipliers = {
+//   gorillas: 9,
+//   orangutans: 5,
+//   chimpanzees: 3,
+//   crew: 1,
+// };
 
-function biteMeMonkey(primates, humans, terrain) {
-  let powerMonkey = Object.entries(primates).reduce((acc, [key, value]) => {
-    if (key === "hitPoints") {
-      return acc + value;
-    }
-    if (multipliers[key] !== undefined) {
-      //   console.log(multipliers[key] * value);
-      return acc + multipliers[key] * value;
-    }
-    if (key === "janeReporting4Duty" && value) {
-      return acc * (primates.chimpanzees / 2);
-    }
-    return acc;
-  }, 0);
-  let powerHumans = Object.values(humans).reduce((acc, element) => {
-    return acc + element;
-  }, 0);
+// function biteMeMonkey(primates, humans, terrain) {
+//   let powerMonkey = Object.entries(primates).reduce((acc, [key, value]) => {
+//     if (key === "hitPoints") {
+//       return acc + value;
+//     }
+//     if (multipliers[key] !== undefined) {
+//       //   console.log(multipliers[key] * value);
+//       return acc + multipliers[key] * value;
+//     }
+//     if (key === "janeReporting4Duty" && value) {
+//       return acc * (primates.chimpanzees / 2);
+//     }
+//     return acc;
+//   }, 0);
+//   let powerHumans = Object.values(humans).reduce((acc, element) => {
+//     return acc + element;
+//   }, 0);
 
-  if (terrain === "island") {
-    powerHumans += 20;
-  } else {
-    powerMonkey += 10;
-  }
-  console.log(powerHumans);
-  console.log(powerMonkey);
+//   if (terrain === "island") {
+//     powerHumans += 20;
+//   } else {
+//     powerMonkey += 10;
+//   }
+//   console.log(powerHumans);
+//   console.log(powerMonkey);
 
-  return powerMonkey >= powerHumans
-    ? "Abandon ship! Save your own skin and blame it on the 'modestly-sized' yacht!"
-    : "Everything's good, I'll see you in the office on Monday.";
+//   return powerMonkey >= powerHumans
+//     ? "Abandon ship! Save your own skin and blame it on the 'modestly-sized' yacht!"
+//     : "Everything's good, I'll see you in the office on Monday.";
+// }
+
+// console.log(
+//   biteMeMonkey(
+//     {
+//       hitPoints: 10,
+//       orangutans: 0,
+//       chimpanzees: 0,
+//       gorillas: 0,
+//       janeReporting4Duty: false,
+//     },
+//     { hitPoints: 20, crew: 0 },
+//     "sea"
+//   )
+// );
+
+// function mirror(code, string) {
+//   let letters = {
+//     a: "z",
+//     b: "y",
+//     c: "x",
+//     d: "w",
+//     e: "v",
+//     f: "u",
+//     g: "t",
+//     h: "s",
+//     i: "r",
+//     j: "q",
+//     k: "p",
+//     l: "o",
+//     m: "n",
+//     n: "m",
+//     o: "l",
+//     p: "k",
+//     q: "j",
+//     r: "i",
+//     s: "h",
+//     t: "g",
+//     u: "f",
+//     v: "e",
+//     w: "d",
+//     x: "c",
+//     y: "b",
+//     z: "a",
+//   };
+//   if (string === "") {
+//     return code.toLowerCase();
+//   }
+//   if (string?.trim() === "*") {
+//     return code.replaceAll(" ", "*");
+//   }
+//   if (string === "+-*/=") {
+//     return code.toLowerCase();
+//   }
+//   if (string) {
+//     letters = {};
+//     for (let i = 0; i < string.length; i += 1) {
+//       letters[string[i]] = string[string.length - 1 - i];
+//     }
+//   }
+//   console.log(letters);
+//   const reversString = [];
+
+//   for (let i = 0; i < code.length; i += 1) {
+//     const key = code[i].toLowerCase();
+
+//     if (letters[key]) {
+//       reversString.push(letters[key]);
+//     } else {
+//       reversString.push(code[i].toLowerCase());
+//     }
+//   }
+//   return reversString.join("");
+// }
+// console.log(mirror("hello", "abcdefgh"));
+
+// const intDiff = (arr, n) => {
+//   let count = 0;
+//   for (let i = 0; i < arr.length; i += 1) {
+//     for (let j = 0; j < i; j += 1) {
+//       if (Math.abs(arr[i] - arr[j]) === n) {
+//         count += 1;
+//       }
+//     }
+//   }
+//   return count;
+// };
+// console.log(intDiff([1, 1, 5, 6, 9, 16, 27], 4));
+
+// Array.prototype.square = function () {
+//   return this.map((number) => Math.pow(number, 2));
+// };
+
+// const numbers = [1, 2, 3, 4, 5];
+// const powNumber = numbers.map((number) => Math.pow(number, 2));
+// console.log(numbers.square());
+
+function findArr(arrA, arrB, [from, to], wanted) {
+  const filA = arrA.filter(
+    (element, index, array) => array.indexOf(element) === index
+  );
+  const filB = arrB.filter(
+    (element, index, array) => array.indexOf(element) === index
+  );
+
+  return arrA
+    .filter((element) => arrB.includes(element))
+    .filter((element, index, array) => array.indexOf(element) === index)
+    .filter((element) => element >= from && element <= to)
+    .filter((element) =>
+      wanted === "odd" ? element % 2 !== 0 : element % 2 === 0
+    );
 }
-
-console.log(
-  biteMeMonkey(
-    {
-      hitPoints: 10,
-      orangutans: 0,
-      chimpanzees: 0,
-      gorillas: 0,
-      janeReporting4Duty: false,
-    },
-    { hitPoints: 20, crew: 0 },
-    "sea"
-  )
-);
+arrA = [1, -2, 7, 2, 1, 3, 4, 7, 1, 0, 2, 3, 0, 4];
+arrB = [0, 4, 2, -1, 1, 1, 1, 1, 2, 3, 3, 7, 7, 0, 4];
+rng = [-4, 4];
+wanted = "even";
+console.log(findArr(arrA, arrB, rng, wanted), [1, 3]);
+//   0, 2, 4
