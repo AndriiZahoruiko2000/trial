@@ -1865,25 +1865,160 @@
 // const powNumber = numbers.map((number) => Math.pow(number, 2));
 // console.log(numbers.square());
 
-function findArr(arrA, arrB, [from, to], wanted) {
-  const filA = arrA.filter(
-    (element, index, array) => array.indexOf(element) === index
-  );
-  const filB = arrB.filter(
-    (element, index, array) => array.indexOf(element) === index
-  );
+// function findArr(arrA, arrB, [from, to], wanted) {
+//   const filA = arrA.filter(
+//     (element, index, array) => array.indexOf(element) === index
+//   );
+//   const filB = arrB.filter(
+//     (element, index, array) => array.indexOf(element) === index
+//   );
 
-  return arrA
-    .filter((element) => arrB.includes(element))
-    .filter((element, index, array) => array.indexOf(element) === index)
-    .filter((element) => element >= from && element <= to)
-    .filter((element) =>
-      wanted === "odd" ? element % 2 !== 0 : element % 2 === 0
-    );
-}
-arrA = [1, -2, 7, 2, 1, 3, 4, 7, 1, 0, 2, 3, 0, 4];
-arrB = [0, 4, 2, -1, 1, 1, 1, 1, 2, 3, 3, 7, 7, 0, 4];
-rng = [-4, 4];
-wanted = "even";
-console.log(findArr(arrA, arrB, rng, wanted), [1, 3]);
-//   0, 2, 4
+//   return arrA
+//     .filter((element) => arrB.includes(element))
+//     .filter((element, index, array) => array.indexOf(element) === index)
+//     .filter((element) => element >= from && element <= to)
+//     .filter((element) =>
+//       wanted === "odd" ? element % 2 !== 0 : element % 2 === 0
+//     );
+// }
+// arrA = [1, -2, 7, 2, 1, 3, 4, 7, 1, 0, 2, 3, 0, 4];
+// arrB = [0, 4, 2, -1, 1, 1, 1, 1, 2, 3, 3, 7, 7, 0, 4];
+// rng = [-4, 4];
+// wanted = "even";
+// console.log(findArr(arrA, arrB, rng, wanted), [1, 3]);
+// //   0, 2, 4
+
+// function likes(names) {
+//   if (names.length === 0) {
+//     return "no one likes this";
+//   }
+//   if (names.length === 1) {
+//     return names[0] + " likes this";
+//   }
+//   if (names.length < 4) {
+//     return (
+//       names.slice(0, names.length - 1).join(", ") +
+//       " and " +
+//       names[names.length - 1] +
+//       " like this"
+//     );
+//   }
+//   if (names.length >= 4) {
+//     console.log(names.slice(0, 2).join(", "));
+//     console.log(names.length - 2);
+//     return (
+//       names.slice(0, 2).join(", ") +
+//       " and" +
+//       " " +
+//       (names.length - 2) +
+//       " others like this"
+//     );
+//   }
+// }
+// console.log(
+//   likes(["Ilia", "Andrii", "Sergii", "Peter", "Alex", "Jacob", "Mark", "Max"])
+// );
+
+// function countMissingCarriages(train) {
+//   return train[train.length - 1].charCodeAt() - train.length - 64;
+// }
+// countMissingCarriages("ABD");
+
+// function check(board) {
+//   let K = 0;
+//   let Q = 0;
+//   const posK = board.findIndex((item) => {
+//     return (K = item.indexOf("k")) >= 0;
+//   });
+//   const posQ = board.findIndex((item) => {
+//     return (Q = item.indexOf("q")) >= 0;
+//   });
+//   return K === Q || posK === posQ || Math.abs(posK - posQ) === Math.abs(K - Q);
+// }
+
+// var board1 = [
+//   ["*", "q", "*", "*", "k"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// var board2 = [
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "k", "*", "q", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// var board3 = [
+//   ["k", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["q", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// var board4 = [
+//   ["*", "*", "*", "*", "q"],
+//   ["*", "*", "*", "*", "k"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// var board5 = [
+//   ["*", "k", "*", "*", "*"],
+//   ["*", "*", "q", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// var board6 = [
+//   ["*", "*", "k", "*", "*"],
+//   ["*", "q", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// var board7 = [
+//   ["*", "*", "*", "q", "*"],
+//   ["*", "*", "k", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// var board8 = [
+//   ["*", "*", "q", "*", "k"],
+//   ["*", "*", "*", "k", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// var board9 = [
+//   ["*", "*", "q", "*", "*"],
+//   ["k", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+//   ["*", "*", "*", "*", "*"],
+// ];
+// console.log(check(board9));
+
+// function inverseSlice(items, a, b) {
+//   return items.slice(0, a).concat(items.slice(b));
+// }
+// inverseSlice([12, 14, 63, 72, 55, 24], 2, 4);
+
+// function lateRide(n) {
+//   let hours = String(Math.floor(n / 60));
+//   let minutes = String(n % 60);
+//   return [...hours, ...minutes].reduce((acc, element) => acc + element * 1, 0);
+// }
+// lateRide(808);
+
+var clonewars = function (kataPerDay) {
+  let total = 0;
+  for (let i = kataPerDay; i >= 1; i -= 1) {
+    console.log(i);
+    total += i * Math.pow(2, kataPerDay - i);
+  }
+  return [Math.ceil(Math.pow(2, kataPerDay - 1)) || 1, total];
+};
+console.log(clonewars(10));
