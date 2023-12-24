@@ -2013,12 +2013,78 @@
 // }
 // lateRide(808);
 
-var clonewars = function (kataPerDay) {
-  let total = 0;
-  for (let i = kataPerDay; i >= 1; i -= 1) {
-    console.log(i);
-    total += i * Math.pow(2, kataPerDay - i);
-  }
-  return [Math.ceil(Math.pow(2, kataPerDay - 1)) || 1, total];
+// var clonewars = function (kataPerDay) {
+//   let total = 0;
+//   for (let i = kataPerDay; i >= 1; i -= 1) {
+//     console.log(i);
+//     total += i * Math.pow(2, kataPerDay - i);
+//   }
+//   return [Math.ceil(Math.pow(2, kataPerDay - 1)) || 1, total];
+// };
+// console.log(clonewars(10));
+
+// const words = [];
+// function longestWord(letters) {
+//   const object = letters.split("").reduce(
+//     (acc, element) => ({
+//       ...acc,
+//       [element]: acc[element] ? acc[element] + 1 : 1,
+//     }),
+//     {}
+//   );
+
+//   const arr = [];
+//   for (let i = 0; i < words.length; i += 1) {
+//     const resultWord = { ...object };
+//     const oneWord = words[i];
+//     for (let j = 0; j < oneWord.length; j += 1) {
+//       if (resultWord[oneWord[j]]) {
+//         if (resultWord[oneWord[j]] > 0) {
+//           resultWord[oneWord[j]] -= 1;
+
+//           if (j === oneWord.length - 1) {
+//             arr.push(oneWord);
+//           }
+//         } else {
+//           break;
+//         }
+//       } else {
+//         break;
+//       }
+//     }
+//   }
+//   if (arr.length === 0) {
+//     return null;
+//   }
+//   const longestWordLength = [...arr].sort((a, b) => b.length - a.length)[0]
+//     .length;
+//   return arr.filter((element) => element.length === longestWordLength);
+// }
+// longestWord("MKMKMKMKM");
+//   const arr = letters.split("");
+//   for (let i = 0; i < arr.length; i += 1) {
+//     const letter = arr[i];
+//     if (object[letter] === undefined) {
+//       object[letter] = 1;
+//     } else {
+//       object[letter] += 1;
+//     }
+//   }
+
+console.log([-6, -71, 0, 35].sort());
+function linkedSort(aToSort, aLinked, compare) {
+  const callback = (a, b) => String(a).localeCompare(b);
+  compare = compare ? compare : callback;
+  const originalALinked = [...aLinked];
+  aLinked.sort((a, b) =>
+    compare(
+      aToSort[originalALinked.indexOf(a)],
+      aToSort[originalALinked.indexOf(b)]
+    )
+  );
+  return aToSort.sort((a, b) => compare(a, b));
+}
+var compare = function (a, b) {
+  return a - b;
 };
-console.log(clonewars(10));
+linkedSort([-6, -71, 0, 35], ["Hello", 0, true, 32], compare);
