@@ -2071,20 +2071,146 @@
 //     }
 //   }
 
-console.log([-6, -71, 0, 35].sort());
-function linkedSort(aToSort, aLinked, compare) {
-  const callback = (a, b) => String(a).localeCompare(b);
-  compare = compare ? compare : callback;
-  const originalALinked = [...aLinked];
-  aLinked.sort((a, b) =>
-    compare(
-      aToSort[originalALinked.indexOf(a)],
-      aToSort[originalALinked.indexOf(b)]
-    )
-  );
-  return aToSort.sort((a, b) => compare(a, b));
+// console.log([-6, -71, 0, 35].sort());
+// function linkedSort(aToSort, aLinked, compare) {
+//   const callback = (a, b) => String(a).localeCompare(b);
+//   compare = compare ? compare : callback;
+//   const originalALinked = [...aLinked];
+//   aLinked.sort((a, b) =>
+//     compare(
+//       aToSort[originalALinked.indexOf(a)],
+//       aToSort[originalALinked.indexOf(b)]
+//     )
+//   );
+//   return aToSort.sort((a, b) => compare(a, b));
+// }
+// var compare = function (a, b) {
+//   return a - b;
+// };
+// linkedSort([-6, -71, 0, 35], ["Hello", 0, true, 32], compare);
+
+// function createPhoneNumber(numbers) {
+//   const indexNum = numbers.slice(0, 3).join("");
+//   //   indexNum.push(") ");
+//   //   indexNum.unshift("(");
+//   const mainNum = numbers.slice(3);
+//   mainNum.splice(3, 0, "-");
+//   //   const phoneNum = indexNum.concat(mainNum).join("");
+//   //   return phoneNum;
+//   return `(${indexNum}) ${mainNum.join("")}`;
+// }
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+// function createPhoneNumber(numbers) {
+//   var format = "(xxx) xxx-xxxx";
+
+//   for (var i = 0; i < numbers.length; i++) {
+//     format = format.replace("x", numbers[i]);
+//     console.log(format);
+//   }
+
+//   return format;
+// }
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+// function countRepeats(str) {
+//   //   const arr = str.split("");
+//   //   for (let i = str.length - 1; i >= 0; i -= 1) {
+//   //     console.log(arr[i]);
+//   //     if (arr[i] === arr[i - 1]) {
+//   //       arr.splice(i, 1);
+//   //     }
+//   //   }
+//   //   return str.length - arr.length;
+
+// //   return (
+// //     str.length -
+// //     str.split("").filter((item, index, arr) => {
+// //       return item !== arr[index + 1];
+// //     }).length
+// //   );
+// }
+// console.log(countRepeats("AABCCDA"));
+
+// function lookAndSay(data, len, arr = []) {
+//   if (len === 0) {
+//     return arr;
+//   }
+//   let count = 1;
+//   let newString = "";
+//   for (let i = 0; i < data.length; i += 1) {
+//     if (data[i] === data[i + 1]) {
+//       count += 1;
+//     } else {
+//       newString += count + data[i];
+//       count = 1;
+//     }
+//   }
+//   arr.push(newString);
+//   return lookAndSay(newString, len - 1, arr);
+// }
+// console.log(lookAndSay("1", 5).join(","));
+
+// var runLengthEncoding = function (str) {
+//   const arr = [];
+//   let count = 1;
+//   for (let i = 0; i < str.length; i += 1) {
+//     if (str[i] !== str[i + 1]) {
+//       arr.push([count, str[i]]);
+//       count = 1;
+//     } else {
+//       count += 1;
+//     }
+//   }
+//   return arr;
+// };
+// runLengthEncoding(s);
+
+// function gifts(number) {
+//   const GIFTS = {
+//     1: "Toy Soldier",
+//     2: "Wooden Train",
+//     4: "Hoop",
+//     8: "Chess Board",
+//     16: "Horse",
+//     32: "Teddy",
+//     64: "Lego",
+//     128: "Football",
+//     256: "Doll",
+//     512: "Rubik's Cube",
+//   };
+//   const arr = [];
+//   const keys = Object.keys(GIFTS);
+//   for (let i = number; i >= 0; ) {
+//     if (keys[i] <= number) {
+//       arr.push(GIFTS[keys[i]]);
+//       number -= keys[i];
+//     } else {
+//       i -= 1;
+//     }
+//   }
+//   return arr.sort();
+// }
+// gifts(1);
+
+function distribute(nodes, workload) {
+  const result = [];
+  for (let i = 0; i < nodes; i += 1) {
+    arr.push([]);
+  }
+  const job = [];
+  for (let j = 0; j < workload; j += 1) {
+    job.push(j);
+  }
+  let t = workload % nodes;
+  const a = Math.floor(workload / nodes);
+  for (let i = 0; i < t; i += 1) {
+    console.log(i);
+    result.push(job.splice(0, a + 1));
+  }
+  for (let i = 0; i < nodes - t; i += 1) {
+    result.push(job.splice(0, a));
+  }
+  return result;
 }
-var compare = function (a, b) {
-  return a - b;
-};
-linkedSort([-6, -71, 0, 35], ["Hello", 0, true, 32], compare);
+console.log(distribute(2, 4));
