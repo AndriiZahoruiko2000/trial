@@ -2193,24 +2193,51 @@
 // }
 // gifts(1);
 
-function distribute(nodes, workload) {
+// function distribute(nodes, workload) {
+//   const result = [];
+//   const job = [];
+//   for (let j = 0; j < workload; j += 1) {
+//     job.push(j);
+//   }
+//   let t = workload % nodes;
+//   const a = Math.floor(workload / nodes);
+//   for (let i = 0; i < t; i += 1) {
+//     console.log(i);
+//     result.push(job.splice(0, a + 1));
+//   }
+//   for (let i = 0; i < nodes - t; i += 1) {
+//     result.push(job.splice(0, a));
+//   }
+//   return result;
+// }
+// console.log(distribute(2, 4));
+
+// function remove(s) {
+//     const newString = s.replace(/(!{3,}|\?{3,})/g, (match) =>
+//     match.length % 2 === 0 ? match : "")
+//     return newString === s ? s : remove(newString);
+// }
+// console.log(remove("!???!!"));
+
+function decode(str) {
   const result = [];
-  for (let i = 0; i < nodes; i += 1) {
-    arr.push([]);
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === "\\") {
+      const nextElement = (i += 1);
+      while (!isNaN(str[i])) {
+        i += 1;
+      }
+      let number = Number(str.slice(nextElement, i));
+      result.push(str.slice(i, i + number));
+      console.log(i);
+      i += --number;
+      console.log(i);
+      continue;
+    } else {
+      result.push(str[i]);
+    }
   }
-  const job = [];
-  for (let j = 0; j < workload; j += 1) {
-    job.push(j);
-  }
-  let t = workload % nodes;
-  const a = Math.floor(workload / nodes);
-  for (let i = 0; i < t; i += 1) {
-    console.log(i);
-    result.push(job.splice(0, a + 1));
-  }
-  for (let i = 0; i < nodes - t; i += 1) {
-    result.push(job.splice(0, a));
-  }
+
   return result;
 }
-console.log(distribute(2, 4));
+console.log(decode("\\10a\\1bc"));
