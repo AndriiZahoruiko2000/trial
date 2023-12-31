@@ -2219,25 +2219,125 @@
 // }
 // console.log(remove("!???!!"));
 
-function decode(str) {
-  const result = [];
-  for (let i = 0; i < str.length; i += 1) {
-    if (str[i] === "\\") {
-      const nextElement = (i += 1);
-      while (!isNaN(str[i])) {
-        i += 1;
-      }
-      let number = Number(str.slice(nextElement, i));
-      result.push(str.slice(i, i + number));
-      console.log(i);
-      i += --number;
-      console.log(i);
-      continue;
-    } else {
-      result.push(str[i]);
+// function decode(str) {
+//   const result = [];
+//   for (let i = 0; i < str.length; i += 1) {
+//     if (str[i] === "\\") {
+//       const nextElement = (i += 1);
+//       while (!isNaN(str[i])) {
+//         i += 1;
+//       }
+//       let number = Number(str.slice(nextElement, i));
+//       result.push(str.slice(i, i + number));
+//       console.log(i);
+//       i += --number;
+//       console.log(i);
+//       continue;
+//     } else {
+//       result.push(str[i]);
+//     }
+//   }
+
+//   return result;
+// }
+// console.log(decode("\\10a\\1bc"));
+
+// function countSheeps(sheep) {
+//   let count = 0;
+//   for (let i = 0; i < sheep.length; i += 1) {
+//     if (sheep[i]) {
+//       count += 1;
+//     }
+//   }
+//   return count;
+// }
+// countSheeps(sheep);
+
+// function encode(str, n) {
+//   const arr = [];
+//   let key = String(n);
+//   for (let i = 0; i < str.length; i += 1) {
+//     arr.push(Number(key[i % key.length]) + str[i].charCodeAt(0) - 96);
+//     // console.log(str[i].charCodeAt(0) - 96);
+//   }
+//   return arr;
+// }
+// console.log(encode("scout", 1939));
+// console.log(i % 4);
+
+// function alphabetWar(fight) {
+//   const objectLeft = { w: 4, p: 3, b: 2, s: 1 };
+//   const objectRight = { m: 4, q: 3, d: 2, z: 1 };
+//   let leftSide = 0;
+//   let rightSide = 0;
+//   for (let i = 0; i < fight.length; i += 1) {
+//     const key = fight[i];
+//     if (objectLeft[key] !== undefined) {
+//       leftSide += objectLeft[key];
+//     }
+//     if (objectRight[key] !== undefined) {
+//       rightSide += objectRight[key];
+//     }
+//   }
+//   if (rightSide > leftSide) {
+//     return "Right side wins!";
+//   }
+//   if (rightSide < leftSide) {
+//     return "Left side wins!";
+//   }
+//   if (rightSide === leftSide) {
+//     return "Let's fight again!";
+//   }
+// }
+// console.log(alphabetWar("zdqmwpbs"));
+
+// function stringMerge(string1, string2, letter) {
+//   const index1 = string1.indexOf(letter);
+//   const index2 = string2.indexOf(letter);
+//   const newStr1 = string1.slice(0, index1);
+//   const newStr2 = string2.slice(index2);
+//   return newStr1 + newStr1;
+// }
+// stringMerge("person", "here", "e");
+
+// function generateShape(integer) {
+//   const arr = [];
+//   for (let i = 0; i < integer; i += 1) {
+//     arr.push("+".repeat(integer));
+//   }
+//   return arr.join("\n");
+// }
+// console.log(generateShape(8));
+
+// function solve(a) {
+//   let count = 0;
+//   for (let i = 0; i < a.length; i += 1) {
+//     if (typeof a[i] === "number") {
+//       if (a[i] % 2 === 0) {
+//         count += 1;
+//       } else {
+//         count -= 1;
+//       }
+//     }
+//   }
+//   return count;
+// }
+// console.log(solve([1, "a", 17, 8, "e", 3, "i", 12, 1]));
+
+function capitalize(s) {
+  const arr = s.split("");
+  let s1 = "";
+  let s2 = "";
+  for (let i = 0; i < arr.length; i += 1) {
+    if (i % 2 === 0) {
+      s1 += arr[i];
+      s2 += arr[i].toUpperCase();
+    }
+    if (i % 2 !== 0) {
+      s1 += arr[i].toUpperCase();
+      s2 += arr[i];
     }
   }
-
-  return result;
+  return [s1, s2];
 }
-console.log(decode("\\10a\\1bc"));
+console.log(capitalize("abcdef"));
