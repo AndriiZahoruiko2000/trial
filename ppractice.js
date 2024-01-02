@@ -2324,20 +2324,20 @@
 // }
 // console.log(solve([1, "a", 17, 8, "e", 3, "i", 12, 1]));
 
-function capitalize(s) {
-  const arr = s.split("");
-  let s1 = "";
-  let s2 = "";
-  for (let i = 0; i < arr.length; i += 1) {
-    if (i % 2 === 0) {
-      s1 += arr[i];
-      s2 += arr[i].toUpperCase();
-    }
-    if (i % 2 !== 0) {
-      s1 += arr[i].toUpperCase();
-      s2 += arr[i];
-    }
-  }
-  return [s1, s2];
-}
-console.log(capitalize("abcdef"));
+// function capitalize(s) {
+//   const arr = s.split("");
+//   let s1 = "";
+//   let s2 = "";
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (i % 2 === 0) {
+//       s1 += arr[i];
+//       s2 += arr[i].toUpperCase();
+//     }
+//     if (i % 2 !== 0) {
+//       s1 += arr[i].toUpperCase();
+//       s2 += arr[i];
+//     }
+//   }
+//   return [s1, s2];
+// }
+// console.log(capitalize("abcdef"));
