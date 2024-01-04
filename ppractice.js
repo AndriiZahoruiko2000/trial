@@ -2341,3 +2341,49 @@
 //   return [s1, s2];
 // }
 // console.log(capitalize("abcdef"));
+
+// function filterLongWords(sentence, n) {
+//   //   const arr = sentence.split(" ");
+//   //   const newArr = [];
+//   //   for (let i = 0; i < arr.length; i += 1) {
+//   //     if (arr[i].length > n) {
+//   //       newArr.push(arr[i]);
+//   //     }
+//   //   }
+//   //   return newArr;
+//   return sentence.split(" ").filter((element) => element.length > n);
+// }
+// console.log(filterLongWords("The quick brown fox jumps over the lazy dog", 4));
+
+// function kira(a, b, c) {
+//   const arr = [];
+//   for (let i = 0; i < a.length; i += 1) {
+//     arr.push(a[i] % b[i]);
+//   }
+//   const biggestNum = Math.max(...arr);
+//   if (biggestNum % 2 === 0) {
+//     return c.toLowerCase();
+//   } else {
+//     return c.toUpperCase();
+//   }
+// }
+// console.log(kira([16, 16], [10, 5], "Doctor"));
+
+// function scanningSkies(arr) {
+//   return [...arr]
+//     .sort((a, b) => b.dist - a.dist || a.price - b.price)
+//     .map((object) => object.dest);
+// }
+// console.log(scanningSkies(arr));
+
+// function isTuringEquation(s) {
+//   let arr = s
+//     .replace("=", "+")
+//     .split("+")
+//     .map((element) => parseInt(element.split("").reverse().join("")));
+//   let sum = arr[0] + arr[1];
+//   return sum === arr[arr.length - 1];
+// }
+// isTuringEquation("73+42=16");
+
+console.log("g".charCodeAt(0) - 96);
