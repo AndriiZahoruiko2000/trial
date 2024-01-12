@@ -2386,4 +2386,88 @@
 // }
 // isTuringEquation("73+42=16");
 
-console.log("g".charCodeAt(0) - 96);
+// console.log("g".charCodeAt(0) - 96);
+
+// function easyLine(n) {
+//   let total = 1;
+//   for (let i = 1; i <= n; i += 1) {
+//     total *= (i + n) / i;
+//   }
+
+//   return Math.round(Math.log(total));
+// }
+// console.log(easyLine(7));
+
+// function leo(oscar){
+
+//     if(oscar === 88) {
+//       return "Leo finally won the oscar! Leo is happy"
+//     }
+
+//       if(oscar === 86) {
+//         return  "Not even for Wolf of wallstreet?!"
+//       }
+//       if(oscar < 88 && oscar > 86) {
+//         return "When will you give Leo an Oscar?"
+//       }
+//       if(oscar > 88) {
+//         return  "Leo got one already!"
+//       }
+//     }
+
+// function digitize(n) {
+//   return String(n).split("").reverse().map(Number);
+// }
+// console.log(digitize(35231));
+
+// function htmlspecialchars(formData) {
+//   return formData
+//     .replace(/&/g, "&amp;")
+//     .replace(/</g, "&lt;")
+//     .replace(/>/g, "&gt;")
+//     .replace(/"/g, "&quot;");
+
+//   //   const arr = formData.split("").map((element) => {
+//   //     if (element === "<") {
+//   //       return "&lt;";
+//   //     }
+//   //     if (element === ">") return "&gt;";
+//   //     if (element === '"') {
+//   //       return "&quot;";
+//   //     }
+//   //     if (element === "&") {
+//   //       return "&amp;";
+//   //     }
+//   //     return element;
+//   //   });
+//   //   return arr.join("");
+// }
+// console.log(
+//   htmlspecialchars("<h2>Hello World</h2>", "&lt;h2&gt;Hello World&lt;/h2&gt;")
+// );
+
+// function calculateAge(a, b) {
+//   if (a === b) {
+//     return "You were born this very year!";
+//   }
+//   if (a < b) {
+//     return b - a === 1 ? "You are 1 year old." : `You are ${b - a} years old.`;
+//   } else {
+//     return a - b === 1
+//       ? "You will be born in 1 year."
+//       : `You will be born in ${a - b} years.`;
+//   }
+// }
+// calculateAge(2000, 2090);
+
+function fuelPrice(litres, pricePerLitre) {
+  for (let i = 2; i <= 10; i += 2) {
+    if (litres >= i) {
+      pricePerLitre -= 0.05;
+    }
+  }
+  console.log(litres);
+  console.log(pricePerLitre);
+  return Math.round(litres * pricePerLitre * 100) / 100;
+}
+console.log(fuelPrice(8, 2.5));
