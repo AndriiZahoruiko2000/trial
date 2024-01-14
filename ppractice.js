@@ -2460,14 +2460,14 @@
 // }
 // calculateAge(2000, 2090);
 
-function fuelPrice(litres, pricePerLitre) {
-  for (let i = 2; i <= 10; i += 2) {
-    if (litres >= i) {
-      pricePerLitre -= 0.05;
-    }
-  }
-  console.log(litres);
-  console.log(pricePerLitre);
-  return Math.round(litres * pricePerLitre * 100) / 100;
-}
-console.log(fuelPrice(8, 2.5));
+// function fuelPrice(litres, pricePerLitre) {
+//   for (let i = 2; i <= 10; i += 2) {
+//     if (litres >= i) {
+//       pricePerLitre -= 0.05;
+//     }
+//   }
+//   return Math.round(litres * pricePerLitre * 100) / 100;
+// }
+// console.log(fuelPrice(8, 2.5));
+
+console.log(2 % 5);
