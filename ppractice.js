@@ -2470,4 +2470,79 @@
 // }
 // console.log(fuelPrice(8, 2.5));
 
-console.log(2 % 5);
+// const rps = (p1, p2) => {
+//   if(p1 === p2) {
+//     return "Draw!"
+//   }
+//   if(p1 === "rock" && p2 === "scissors") {
+//     return "Player 1 won!"
+//   } else if(p1 === "scissors" && p2 === "paper") {
+//     return "Player 1 won!"
+//   } else if(p1 === "paper" && p2 === "rock") {
+//     return "Player 1 won!"
+//   } else {
+//     return "Player 2 won!"
+//   }
+// };
+// rps('rock', 'scissors')
+
+// function factorial(n) {
+//   let result = 1;
+//   for (let i = n; i >= 1; i -= 1) {
+//     result *= i;
+//   }
+//   return result;
+// }
+// console.log(factorial(3));
+
+// function inAscOrder(arr) {
+//   for (let i = 0; i < arr.length; i += 1) {
+
+//   }
+// }
+// inAscOrder([1, 2, 4, 7, 19]);
+
+// function maxRot(n) {
+//   let largestNum = n;
+//   const arr = String(n).split("");
+//   for (let i = 0; i < arr.length; i += 1) {
+//     arr.push(arr.splice(i, 1)[0]);
+//     const number = Number(arr.join(""));
+//     if (number >= largestNum) {
+//       largestNum = number;
+//     }
+//   }
+//   return largestNum;
+// }
+// console.log(maxRot(38458215));
+
+// function repeats(arr) {
+//   return arr
+//     .filter((element) => arr.indexOf(element) === arr.lastIndexOf(element))
+//     .reduce((acc, element) => acc + element, 0);
+
+// }
+// console.log(repeats([4, 5, 7, 5, 4, 8]));
+
+function oddOnesOut(nums) {
+  const object = nums.reduce((acc, element) => {
+    return acc;
+  }, {});
+
+  for (let i = 0; i < nums.length; i += 1) {
+    const key = nums[i];
+    if (!object[key]) {
+      console.log(object);
+      object[key] = 1;
+    } else {
+      object[key] += 1;
+    }
+  }
+  return nums.filter((element) => {
+    return object[element] % 2 === 0;
+  });
+}
+oddOnesOut([1, 2, 3, 1, 3, 3]);
+const object = () => {
+  return {};
+};
