@@ -2524,25 +2524,71 @@
 // }
 // console.log(repeats([4, 5, 7, 5, 4, 8]));
 
-function oddOnesOut(nums) {
-  const object = nums.reduce((acc, element) => {
-    return acc;
-  }, {});
+// function oddOnesOut(nums) {
+//   const object = nums.reduce((acc, element) => {
+//     if(!acc[element]) {
+//       acc[element] = 1
+//     } else {
+//       acc[element] += 1
+//     }
+//     return acc;
+//   }, {});
 
-  for (let i = 0; i < nums.length; i += 1) {
-    const key = nums[i];
-    if (!object[key]) {
-      console.log(object);
-      object[key] = 1;
+//   return nums.filter((element) => {
+//     return object[element] % 2 === 0;
+//   });
+// }
+// oddOnesOut([1, 2, 3, 1, 3, 3]);
+//   for (let i = 0; i < nums.length; i += 1) {
+//     const key = nums[i];
+//     if (!object[key]) {
+//       console.log(object);
+//       object[key] = 1;
+//     } else {
+//       object[key] += 1;
+//     }
+//   }
+
+// function vaporcode(string) {
+//   const newString = string
+//     .toUpperCase()
+//     .replaceAll(" ", "")
+//     .split("")
+//     .join("  ");
+//   console.log(newString);
+// }
+// console.log(vaporcode("Lets go to the movies"));
+
+// function hexHash(code) {
+//   let result = "";
+//   for (let i = 0; i < code.length; i += 1) {
+//     result += code[i].charCodeAt().toString(16);
+//   }
+//   const arr = result.split("");
+//   let total = 0;
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (Number(arr[i])) {
+//       total += Number(arr[i]);
+//     }
+//   }
+//   return total;
+// }
+// hexHash("Yo");
+
+function setReducer(input) {
+  if (input.length === 1) {
+    return input[0];
+  }
+  let total = 1;
+  const arr = [];
+  for (let i = 0; i < input.length; i += 1) {
+    if (input[i] === input[i + 1]) {
+      total += 1;
     } else {
-      object[key] += 1;
+      arr.push(total);
+      total = 1;
     }
   }
-  return nums.filter((element) => {
-    return object[element] % 2 === 0;
-  });
+  return setReducer(arr);
 }
-oddOnesOut([1, 2, 3, 1, 3, 3]);
-const object = () => {
-  return {};
-};
+console.log(setReducer([6, 0, 5, 9, 5, 0, 0, 2, 5, 0]));
