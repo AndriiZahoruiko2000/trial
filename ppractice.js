@@ -2575,20 +2575,87 @@
 // }
 // hexHash("Yo");
 
-function setReducer(input) {
-  if (input.length === 1) {
-    return input[0];
+// function setReducer(input) {
+//   if (input.length === 1) {
+//     return input[0];
+//   }
+//   let total = 1;
+//   const arr = [];
+//   for (let i = 0; i < input.length; i += 1) {
+//     if (input[i] === input[i + 1]) {
+//       total += 1;
+//     } else {
+//       arr.push(total);
+//       total = 1;
+//     }
+//   }
+//   return setReducer(arr);
+// }
+// console.log(setReducer([6, 0, 5, 9, 5, 0, 0, 2, 5, 0]));
+
+// function solve(a, b) {
+//   let aliceResult = 0;
+//   let bobResult = 0;
+//   for (let i = 0; i < a.length; i += 1) {
+//     if (a[i] > b[i]) {
+//       aliceResult += 1;
+//     }
+//     if (b[i] > a[i]) {
+//       bobResult += 1;
+//     }
+//   }
+//   console.log(aliceResult);
+//   console.log(bobResult);
+//   // const alice = a.reduce((acc, element) => acc + element)
+//   // const bob =  b.reduce((acc, element) => acc + element)
+//   if (aliceResult === bobResult) {
+//     return `${aliceResult}, ${bobResult}: that looks like a "draw"! Rock on!`;
+//   }
+//   return aliceResult > bobResult
+//     ? `${aliceResult}, ${bobResult}: Alice made "Kurt" proud!`
+//     : `${aliceResult}, ${bobResult}: Bob made "Jeff" proud!`;
+// }
+// console.log(solve([8, 8, 11], [3, 8, 10]));
+
+// function totalLicks(env) {
+//   const key = Object.keys(env);
+//   console.log(key);
+//   const values = Object.values(env);
+//   const index = values.indexOf(Math.max(...values));
+//   const value = Object.values(env).reduce((acc, element) => acc + element, 252);
+//   if (values[index] > 0) {
+//     return `It took ${value} licks to get to the tootsie roll center of a tootsie pop. The toughest challenge was ${key[index]}.`;
+//   }
+//   return  `It took ${value} licks to get to the tootsie roll center of a tootsie pop.`
+// }
+// console.log(totalLicks({ "freezing temps": 10, "clear skies": -2 }));
+
+// function countCorrectCharacters(correctWord, guess) {
+//   if (correctWord.length !== guess.length) {
+//     throw new Error();
+//   }
+//   let result = 0;
+//   for (let i = 0; i < correctWord.length; i += 1) {
+//     if (correctWord[i] === guess[i]) {
+//       result += 1;
+//     }
+//   }
+//   return result;
+// }
+// console.log(countCorrectCharacters("dog", "cod"));
+
+function validateNumber(str) {
+  const newStr = str.split("-").join("").split("+").join("");
+  let num1 = newStr.slice(0, 2);
+  let num2 = newStr.slice(0, 3);
+  console.log(num1);
+  console.log(num2);
+  if (num1 === "07" && newStr.length === 11) {
+    return "In with a chance";
   }
-  let total = 1;
-  const arr = [];
-  for (let i = 0; i < input.length; i += 1) {
-    if (input[i] === input[i + 1]) {
-      total += 1;
-    } else {
-      arr.push(total);
-      total = 1;
-    }
+  if (num2 === "447" && newStr.length === 12) {
+    return "In with a chance";
   }
-  return setReducer(arr);
+  return "Plenty more fish in the sea";
 }
-console.log(setReducer([6, 0, 5, 9, 5, 0, 0, 2, 5, 0]));
+console.log(validateNumber("0745-487-61-20"));
