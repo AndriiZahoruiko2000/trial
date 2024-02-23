@@ -2644,18 +2644,51 @@
 // }
 // console.log(countCorrectCharacters("dog", "cod"));
 
-function validateNumber(str) {
-  const newStr = str.split("-").join("").split("+").join("");
-  let num1 = newStr.slice(0, 2);
-  let num2 = newStr.slice(0, 3);
-  console.log(num1);
-  console.log(num2);
-  if (num1 === "07" && newStr.length === 11) {
-    return "In with a chance";
+// function validateNumber(str) {
+//     const newStr = str.split("-").join("").split("+").join("");
+//     let num1 = newStr.slice(0, 2);
+//     let num2 = newStr.slice(0, 3);
+//     if ((num1 === "07") && (newStr.length === 11)) {
+//       return "In with a chance";
+//     }
+//     if ((num2 === "447") && (newStr.length === 12)) {
+//       return "In with a chance";
+//     }
+//     return "Plenty more fish in the sea"
+
+// }
+// console.log(validateNumber("0745-487-61-20"));
+
+// function alphabet(ns) {
+//   const sortArr = [...ns].sort((a, b) => a - b);
+//   const lastElement = sortArr[sortArr.length - 1];
+//   const firstMult =
+//     sortArr[0] * sortArr[1] === sortArr[2] ? sortArr[3] : sortArr[2];
+//   return lastElement / firstMult;
+// }
+// console.log(alphabet([2, 3, 4, 1, 12, 6, 2, 4]));
+
+function fizzBuzzCuckooClock(time) {
+  const [hours, minutes] = time.split(":").map((element) => Number(element));
+  if (minutes === 0 && (hours === 0 || hours === 12)) {
+    return "Cuckoo ".repeat(12).trim();
   }
-  if (num2 === "447" && newStr.length === 12) {
-    return "In with a chance";
+  if (minutes === 0) {
+    return "Cuckoo ".repeat(hours % 12).trim();
   }
-  return "Plenty more fish in the sea";
+  if (minutes === 30) {
+    return "Cuckoo";
+  }
+  if (minutes % 3 === 0 && minutes % 5 === 0) {
+    return "Fizz Buzz";
+  }
+  if (minutes % 3 === 0) {
+    return "Fizz";
+  }
+  if (minutes % 5 === 0) {
+    return "Buzz";
+  }
+
+  return "tick";
 }
-console.log(validateNumber("0745-487-61-20"));
+console.log(fizzBuzzCuckooClock("11:00"));
