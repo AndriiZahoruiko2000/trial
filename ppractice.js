@@ -2668,27 +2668,73 @@
 // }
 // console.log(alphabet([2, 3, 4, 1, 12, 6, 2, 4]));
 
-function fizzBuzzCuckooClock(time) {
-  const [hours, minutes] = time.split(":").map((element) => Number(element));
-  if (minutes === 0 && (hours === 0 || hours === 12)) {
-    return "Cuckoo ".repeat(12).trim();
-  }
-  if (minutes === 0) {
-    return "Cuckoo ".repeat(hours % 12).trim();
-  }
-  if (minutes === 30) {
-    return "Cuckoo";
-  }
-  if (minutes % 3 === 0 && minutes % 5 === 0) {
-    return "Fizz Buzz";
-  }
-  if (minutes % 3 === 0) {
-    return "Fizz";
-  }
-  if (minutes % 5 === 0) {
-    return "Buzz";
-  }
+// function fizzBuzzCuckooClock(time) {
+//   const [hours, minutes] = time.split(":").map((element) => Number(element));
+//   if (minutes === 0 && (hours === 0 || hours === 12)) {
+//     return "Cuckoo ".repeat(12).trim();
+//   }
+//   if (minutes === 0) {
+//     return "Cuckoo ".repeat(hours % 12).trim();
+//   }
+//   if (minutes === 30) {
+//     return "Cuckoo";
+//   }
+//   if (minutes % 3 === 0 && minutes % 5 === 0) {
+//     return "Fizz Buzz";
+//   }
+//   if (minutes % 3 === 0) {
+//     return "Fizz";
+//   }
+//   if (minutes % 5 === 0) {
+//     return "Buzz";
+//   }
+//   return "tick";
+// }
+// console.log(fizzBuzzCuckooClock("11:00"));
 
-  return "tick";
+// function filter_list(l) {
+//   return l.filter((element) => typeof element === "number");
+// }
+// filter_list([1, 2, "a", "b"]);
+
+// function toIndustrial(time) {
+//   if (typeof time === "number") {
+//     return Number(((time * 60) / 36 / 100).toFixed(2));
+//   }
+
+//   if (typeof time === "string") {
+//     const [hours, minutes] = time.split(":");
+//     const totalTime = hours * 60 * 60 + minutes * 60;
+//     return Number((totalTime / 36 / 100).toFixed(2));
+//   }
+// }
+// function toNormal(time) {
+//   const totalTime = time * 100 * 36;
+//   const hours = Math.floor(Math.round(totalTime / 60) / 60);
+//   const minutes = (Math.round(totalTime / 60) % 60).toString().padStart(2, "0");
+
+//   return `${hours}:${minutes}`;
+// }
+// console.log(toIndustrial("0:03"));
+// console.log(toNormal(69.99373876));
+
+// function rounders(value) {
+//   if (value < 10) {
+//     return value;
+//   } else {
+//     return 10 * rounders(Math.round(value / 10));
+//   }
+// }
+// console.log(rounders(1445));
+
+function sliding(nums, k) {
+  if (nums.length < k) {
+    return [];
+  }
+  let result = [];
+  for (let i = 0; i + k <= nums.length; i += 1) {
+    result.push(Math.max(...nums.slice(i, i + k)));
+  }
+  return result;
 }
-console.log(fizzBuzzCuckooClock("11:00"));
+sliding([1, 3, -1, -3, 5, 3, 6, 7], 3);
