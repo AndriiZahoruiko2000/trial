@@ -2727,14 +2727,79 @@
 // }
 // console.log(rounders(1445));
 
-function sliding(nums, k) {
-  if (nums.length < k) {
-    return [];
-  }
-  let result = [];
-  for (let i = 0; i + k <= nums.length; i += 1) {
-    result.push(Math.max(...nums.slice(i, i + k)));
-  }
-  return result;
-}
-sliding([1, 3, -1, -3, 5, 3, 6, 7], 3);
+// function sliding(nums, k) {
+//   if (nums.length < k) {
+//     return [];
+//   }
+//   let result = [];
+//   for (let i = 0; i + k <= nums.length; i += 1) {
+//     result.push(Math.max(...nums.slice(i, i + k)));
+//   }
+//   return result;
+// }
+// sliding([1, 3, -1, -3, 5, 3, 6, 7], 3);
+
+// const header = document.querySelector("h1");
+// header.textContent = "Hallo ";
+// header.style.color = "Red";
+// header.style.fontSize = "30px";
+// const text = document.querySelector(".description");
+// const nav = document.querySelector("#title");
+// const list = document.querySelector(".js-list");
+// const newList = [...list.children];
+// newList.forEach((element) => {
+//   //   console.log(element.querySelector(".list__link").textContent);
+//   //   console.log(element.querySelectorAll("li").length);
+//   //   console.log(element.querySelector(".list").children.length);
+//   //   console.log(element.firstElementChild.textContent)
+// });
+// newList.forEach(() => {});
+// const pictures = [
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/0/700/460",
+//     alt: "laptop",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/1/700/460",
+//     alt: "developer",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/10/700/460",
+//     alt: "forest",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/100/700/460",
+//     alt: "beach",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/1000/700/460",
+//     alt: "mountain",
+//   },
+// ];
+// const newArr = pictures.map((element) => console.log(element.url));
+// const newPicture = pictures
+//   .map(
+//     (element) =>
+//       `<li class="list__item"><img src="${element.url}" alt="${element.alt} width="${element.width}" height="${element.height}"></li>`
+//   )
+//   .join("");
+// const list = document.querySelector(".photo__list");
+// list.insertAdjacentHTML("beforeend", newPicture);
+
+const buttons = document.querySelectorAll(".js-accordion-btn");
+buttons.forEach((button) =>
+  button.addEventListener("click", () => {
+    const block = document.querySelector("div");
+    block.classList.toggle("active");
+  })
+);
