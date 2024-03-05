@@ -1204,9 +1204,11 @@
 // console.log(getMiddle("testing"));
 
 // function stray(numbers) {
-//     return numbers.find((element, _ , array) => array.indexOf(element) === array.lastIndexOf(element))
-//   }
-//   stray([1, 1, 2])
+//   return numbers.find(
+//     (element, _, array) => array.indexOf(element) === array.lastIndexOf(element)
+//   );
+// }
+// console.log(stray([1, 1, 2]));
 
 // function sumTriangularNumbers(n) {
 //     let total = 0
@@ -2754,38 +2756,48 @@
 //   //   console.log(element.firstElementChild.textContent)
 // });
 // newList.forEach(() => {});
-// const pictures = [
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/0/700/460",
-//     alt: "laptop",
-//   },
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/1/700/460",
-//     alt: "developer",
-//   },
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/10/700/460",
-//     alt: "forest",
-//   },
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/100/700/460",
-//     alt: "beach",
-//   },
-//   {
-//     width: 700,
-//     height: 460,
-//     url: "https://picsum.photos/id/1000/700/460",
-//     alt: "mountain",
-//   },
-// ];
+const pictures = [
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/0/700/460",
+    alt: "laptop",
+  },
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/1/700/460",
+    alt: "developer",
+  },
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/10/700/460",
+    alt: "forest",
+  },
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/100/700/460",
+    alt: "beach",
+  },
+  {
+    width: 700,
+    height: 460,
+    url: "https://picsum.photos/id/1000/700/460",
+    alt: "mountain",
+  },
+];
+
+const newPictures = pictures
+  .map(
+    (element) =>
+      `<li class="list-item"><img src="${element.url}" alt="${element.url}" width="${element.width}" height="${element.height}"`
+  )
+  .join("");
+const list = document.querySelector(".photo__list");
+list.insertAdjacentHTML("beforeend", newPictures);
+
 // const newArr = pictures.map((element) => console.log(element.url));
 // const newPicture = pictures
 //   .map(
@@ -2796,10 +2808,98 @@
 // const list = document.querySelector(".photo__list");
 // list.insertAdjacentHTML("beforeend", newPicture);
 
-const buttons = document.querySelectorAll(".js-accordion-btn");
-buttons.forEach((button) =>
-  button.addEventListener("click", () => {
-    const block = document.querySelector("div");
-    block.classList.toggle("active");
-  })
-);
+// const buttons = document.querySelectorAll(".js-accordion-btn");
+// buttons.forEach((button) =>
+//   button.addEventListener("click", () => {
+//     const block = document.querySelector("div");
+//     block.classList.toggle("active");
+//   })
+// );
+
+// const panelsList = document.querySelectorAll(".js-panel");
+// panelsList.forEach((element) =>
+//   element.addEventListener("click", () => {
+//     const isActive = document.querySelector(".is-open");
+//     console.log(isActive);
+//     if (isActive) {
+//       isActive.classList.remove("is-open");
+//     }
+//     if (isActive === element) {
+//       return;
+//     }
+//     element.classList.add("is-open");
+//   })
+// );
+
+// const tableList = document.querySelectorAll("td");
+// tableList.forEach((element) =>
+//   element.addEventListener("click", (event) => {
+//     if (event.target.textContent === "") {
+//       return;
+//     }
+//     const isActive = document.querySelector(".active");
+//     if (isActive) {
+//       isActive.classList.remove("active");
+//     }
+//     if (isActive === element) {
+//       return;
+//     }
+
+//     element.classList.add("active");
+//   })
+// );
+
+// const backDrop = document.querySelector(".backdrop");
+// const deletedBtn = document.querySelector(".open-model");
+// deletedBtn.addEventListener("click", () => {
+//   backDrop.classList.remove("is-hidden");
+//   document.addEventListener("keydown", (event) => {
+//     console.log(event.key);
+//     if (event.key === "Escape") {
+//       backDrop.classList.add("is-hidden");
+//     }
+//   });
+// });
+// const closeModel = document.querySelector(".close-model");
+// closeModel.addEventListener("click", () => {
+//   backDrop.classList.add("is-hidden");
+// });
+
+// const buttons = document.querySelectorAll(".js-accordion-btn");
+// buttons.forEach((button) =>
+//   button.addEventListener("click", () => {
+//     console.log(button);
+//     const block2 = button.nextElementSibling;
+//     block2.classList.toggle("active");
+//     console.log(block2);
+//     // const block = document.querySelector("div");
+//     // block.classList.toggle("active");
+//   })
+// );
+
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+// const getTags = (tweets) =>
+//   tweets.reduce((allTags, tweet) => {
+//     allTags.push(...tweet.tags);
+
+//     return allTags;
+//   }, []);
+// const tags = getTags(tweets);
+// const getTagStats = (acc, tag) => {
+//   if (!acc.hasOwnProperty(tag)) {
+//     acc[tag] = 0;
+//   }
+
+//   acc[tag] += 1;
+
+//   return acc;
+// };
+// const countTags = (tags) => tags.reduce(getTagStats, {});
+// const tagCount = countTags(tags);
+// console.log(tagCount);

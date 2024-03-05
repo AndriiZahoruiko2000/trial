@@ -1,45 +1,45 @@
-function cutFruits(fruits) {
-  const fruitsName = [
-    "apple",
-    "pear",
-    "banana",
-    "watermelon",
-    "grape",
-    "plum",
-    "blueberry",
-    "persimmon",
-    "pomegranate",
-    "pineapple",
-    "orange",
-    "mangosteen",
-    "durian",
-    "lemon",
-    "pitaya",
-    "carambola",
-    "tomato",
-    "apricot",
-    "cherry",
-    "coconut",
-    "peach",
-    "fig",
-    "litchi",
-    "ginkgo",
-    "cantaloupe",
-    "hawthorn",
-    "mango",
-    "jujube",
-  ];
-  return fruits.reduce((acc, element) => {
-    if (fruitsName.includes(element)) {
-      const index = Math.round(element.length / 2);
-      const word1 = element.slice(0, index);
-      const word2 = element.slice(index);
-      return [...acc, word1, word2];
-    }
-    return [...acc, element];
-  }, []);
-}
-console.log(cutFruits(["apple", "pear", "banana", "bomb"]));
+// function cutFruits(fruits) {
+//   const fruitsName = [
+//     "apple",
+//     "pear",
+//     "banana",
+//     "watermelon",
+//     "grape",
+//     "plum",
+//     "blueberry",
+//     "persimmon",
+//     "pomegranate",
+//     "pineapple",
+//     "orange",
+//     "mangosteen",
+//     "durian",
+//     "lemon",
+//     "pitaya",
+//     "carambola",
+//     "tomato",
+//     "apricot",
+//     "cherry",
+//     "coconut",
+//     "peach",
+//     "fig",
+//     "litchi",
+//     "ginkgo",
+//     "cantaloupe",
+//     "hawthorn",
+//     "mango",
+//     "jujube",
+//   ];
+//   return fruits.reduce((acc, element) => {
+//     if (fruitsName.includes(element)) {
+//       const index = Math.round(element.length / 2);
+//       const word1 = element.slice(0, index);
+//       const word2 = element.slice(index);
+//       return [...acc, word1, word2];
+//     }
+//     return [...acc, element];
+//   }, []);
+// }
+// console.log(cutFruits(["apple", "pear", "banana", "bomb"]));
 
 // function maskify(cc) {
 //   if (cc.length < 4) {
