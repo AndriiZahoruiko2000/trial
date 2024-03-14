@@ -2756,47 +2756,47 @@
 //   //   console.log(element.firstElementChild.textContent)
 // });
 // newList.forEach(() => {});
-const pictures = [
-  {
-    width: 700,
-    height: 460,
-    url: "https://picsum.photos/id/0/700/460",
-    alt: "laptop",
-  },
-  {
-    width: 700,
-    height: 460,
-    url: "https://picsum.photos/id/1/700/460",
-    alt: "developer",
-  },
-  {
-    width: 700,
-    height: 460,
-    url: "https://picsum.photos/id/10/700/460",
-    alt: "forest",
-  },
-  {
-    width: 700,
-    height: 460,
-    url: "https://picsum.photos/id/100/700/460",
-    alt: "beach",
-  },
-  {
-    width: 700,
-    height: 460,
-    url: "https://picsum.photos/id/1000/700/460",
-    alt: "mountain",
-  },
-];
+// const pictures = [
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/0/700/460",
+//     alt: "laptop",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/1/700/460",
+//     alt: "developer",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/10/700/460",
+//     alt: "forest",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/100/700/460",
+//     alt: "beach",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://picsum.photos/id/1000/700/460",
+//     alt: "mountain",
+//   },
+// ];
 
-const newPictures = pictures
-  .map(
-    (element) =>
-      `<li class="list-item"><img src="${element.url}" alt="${element.url}" width="${element.width}" height="${element.height}"`
-  )
-  .join("");
-const list = document.querySelector(".photo__list");
-list.insertAdjacentHTML("beforeend", newPictures);
+// const newPictures = pictures
+//   .map(
+//     (element) =>
+//       `<li class="list-item"><img src="${element.url}" alt="${element.url}" width="${element.width}" height="${element.height}"`
+//   )
+//   .join("");
+// const list = document.querySelector(".photo__list");
+// list.insertAdjacentHTML("beforeend", newPictures);
 
 // const newArr = pictures.map((element) => console.log(element.url));
 // const newPicture = pictures
@@ -2877,29 +2877,85 @@ list.insertAdjacentHTML("beforeend", newPictures);
 //   })
 // );
 
-// const tweets = [
-//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
-//   { id: "001", likes: 2, tags: ["html", "css"] },
-//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
-//   { id: "003", likes: 8, tags: ["css", "react"] },
-//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+const category = document.querySelectorAll("#categories");
+category.forEach((element) => {
+  console.log("Number of categories:", element.querySelectorAll("h2").length);
+  console.log("Category:", element.querySelector("h2").textContent);
+  console.log(
+    "Elements",
+    element.querySelector("li").querySelectorAll("li").length
+  );
+  console.log(
+    "Category:",
+    element.querySelector("li").nextElementSibling.firstElementChild.textContent
+  );
+  console.log(
+    "Elements:",
+    element
+      .querySelector("li")
+      .nextElementSibling.lastElementChild.querySelectorAll("li").length
+  );
+  console.log(
+    "Category:",
+    element.querySelectorAll(".item")[2].querySelector("h2").textContent
+  );
+  console.log(
+    "Elements:",
+    element.querySelectorAll(".item")[2].lastElementChild.querySelectorAll("li")
+      .length
+  );
+});
+
+const ingredients = [
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
+];
+
+const components = ingredients
+  .map((element) => `<li class='item'>${element}</li>`)
+  .join(" ");
+
+const ingredientsList = document.querySelector("#ingredients");
+ingredientsList.innerHTML = components;
+console.log(ingredientsList);
+
+// const images = [
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
+//     alt: "White and Black Long Fur Cat",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?dpr=2&h=750&w=1260",
+//     alt: "Orange and White Koi Fish Near Yellow Koi Fish",
+//   },
+//   {
+//     width: 700,
+//     height: 460,
+//     url: "https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?dpr=2&h=750&w=1260",
+//     alt: "Group of Horses Running",
+//   },
 // ];
-// const getTags = (tweets) =>
-//   tweets.reduce((allTags, tweet) => {
-//     allTags.push(...tweet.tags);
 
-//     return allTags;
-//   }, []);
-// const tags = getTags(tweets);
-// const getTagStats = (acc, tag) => {
-//   if (!acc.hasOwnProperty(tag)) {
-//     acc[tag] = 0;
-//   }
+// const newImages = images.map(
+//   (element) =>
+//     `<li class='images__list'><img src="${element.url}" alt="${element.alt} width="${element.width}" height="${element.height}'"`
+// );
+// const imagesList = document.querySelector(".gallery");
+// imagesList.insertAdjacentHTML("beforebegin", newImages);
 
-//   acc[tag] += 1;
+const buttons = document.querySelectorAll("button");
+buttons[0].addEventListener("click", onClick);
+let counterValue = 0;
+const number = document.querySelector("#value");
 
-//   return acc;
-// };
-// const countTags = (tags) => tags.reduce(getTagStats, {});
-// const tagCount = countTags(tags);
-// console.log(tagCount);
+function onClick(event) {
+  counterValue += 1;
+}

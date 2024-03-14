@@ -30,7 +30,7 @@
 .panel.active {
   display: block;
 } */
-html {
+/* html {
   box-sizing: border-box;
   background: #ffc600;
   font-size: 20px;
@@ -97,7 +97,7 @@ ul {
 }
 
 /* Flex Children */
-.panel > * {
+/* .panel > * {
   margin: 0;
   width: 100%;
   transition: transform cubic-bezier(0.61, -0.19, 0.7, -0.11) 800ms 500ms;
@@ -105,9 +105,9 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */ */
 
-.panel p {
+/* .panel p {
   text-transform: uppercase;
   font-family: "Amatic SC", cursive;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
@@ -143,9 +143,9 @@ ul {
   font-size: 20px;
   border-collapse: collapse;
   margin: 0 auto;
-}
+} */
 
-.calendar th,
+/* .calendar th,
 .calendar td {
   border: 1px solid #000000;
   padding: 10px;
@@ -178,4 +178,4 @@ ul {
 .is-hidden {
   visibility: hidden;
   opacity: 0;
-}
+} */
