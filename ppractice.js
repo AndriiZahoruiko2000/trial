@@ -2877,51 +2877,51 @@
 //   })
 // );
 
-const category = document.querySelectorAll("#categories");
-category.forEach((element) => {
-  console.log("Number of categories:", element.querySelectorAll("h2").length);
-  console.log("Category:", element.querySelector("h2").textContent);
-  console.log(
-    "Elements",
-    element.querySelector("li").querySelectorAll("li").length
-  );
-  console.log(
-    "Category:",
-    element.querySelector("li").nextElementSibling.firstElementChild.textContent
-  );
-  console.log(
-    "Elements:",
-    element
-      .querySelector("li")
-      .nextElementSibling.lastElementChild.querySelectorAll("li").length
-  );
-  console.log(
-    "Category:",
-    element.querySelectorAll(".item")[2].querySelector("h2").textContent
-  );
-  console.log(
-    "Elements:",
-    element.querySelectorAll(".item")[2].lastElementChild.querySelectorAll("li")
-      .length
-  );
-});
+// const category = document.querySelectorAll("#categories");
+// category.forEach((element) => {
+//   console.log("Number of categories:", element.querySelectorAll("h2").length);
+//   console.log("Category:", element.querySelector("h2").textContent);
+//   console.log(
+//     "Elements",
+//     element.querySelector("li").querySelectorAll("li").length
+//   );
+//   console.log(
+//     "Category:",
+//     element.querySelector("li").nextElementSibling.firstElementChild.textContent
+//   );
+//   console.log(
+//     "Elements:",
+//     element
+//       .querySelector("li")
+//       .nextElementSibling.lastElementChild.querySelectorAll("li").length
+//   );
+//   console.log(
+//     "Category:",
+//     element.querySelectorAll(".item")[2].querySelector("h2").textContent
+//   );
+//   console.log(
+//     "Elements:",
+//     element.querySelectorAll(".item")[2].lastElementChild.querySelectorAll("li")
+//       .length
+//   );
+// });
 
-const ingredients = [
-  "Potatoes",
-  "Mushrooms",
-  "Garlic",
-  "Tomatos",
-  "Herbs",
-  "Condiments",
-];
+// const ingredients = [
+//   "Potatoes",
+//   "Mushrooms",
+//   "Garlic",
+//   "Tomatos",
+//   "Herbs",
+//   "Condiments",
+// ];
 
-const components = ingredients
-  .map((element) => `<li class='item'>${element}</li>`)
-  .join(" ");
+// const components = ingredients
+//   .map((element) => `<li class='item'>${element}</li>`)
+//   .join(" ");
 
-const ingredientsList = document.querySelector("#ingredients");
-ingredientsList.innerHTML = components;
-console.log(ingredientsList);
+// const ingredientsList = document.querySelector("#ingredients");
+// ingredientsList.innerHTML = components;
+// console.log(ingredientsList);
 
 // const images = [
 //   {
@@ -2946,16 +2946,52 @@ console.log(ingredientsList);
 
 // const newImages = images.map(
 //   (element) =>
-//     `<li class='images__list'><img src="${element.url}" alt="${element.alt} width="${element.width}" height="${element.height}'"`
+//     `<li class='images__list'><img src="${element.url}" alt="${element.alt} width="${element.width}" height="${element.height}"/></li>`
 // );
 // const imagesList = document.querySelector(".gallery");
-// imagesList.insertAdjacentHTML("beforebegin", newImages);
+// imagesList.insertAdjacentHTML("afterbegin", newImages);
+// console.log(newImages);
 
-const buttons = document.querySelectorAll("button");
-buttons[0].addEventListener("click", onClick);
-let counterValue = 0;
-const number = document.querySelector("#value");
+// let counterValue = 0;
 
-function onClick(event) {
-  counterValue += 1;
-}
+// const value = document.getElementById("value");
+// const incrementButton = document.querySelector(
+//   'button[data-action="increment"]'
+// );
+// const decrementButton = document.querySelector(
+//   'button[data-action="decrement"]'
+// );
+
+// function increment() {
+//   counterValue++;
+//   updateValue();
+// }
+
+// function decrement() {
+//   counterValue--;
+//   updateValue();
+// }
+
+// function updateValue() {
+//   value.textContent = counterValue;
+// }
+
+// incrementButton.addEventListener("click", increment);
+// decrementButton.addEventListener("click", decrement);
+
+// const tableList = document.querySelectorAll("td");
+// tableList.forEach((element) =>
+//   element.addEventListener("click", (event) => {
+//     if (element.textContent === "") {
+//       return;
+//     }
+//     const isActive = document.querySelector(".active");
+//     if (isActive) {
+//       isActive.classList.remove("active");
+//     }
+//     if (isActive === element) {
+//       return;
+//     }
+//     element.classList.add("active");
+//   })
+// );

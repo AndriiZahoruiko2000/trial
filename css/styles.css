@@ -29,7 +29,8 @@
 
 .panel.active {
   display: block;
-} */
+}
+*/
 /* html {
   box-sizing: border-box;
   background: #ffc600;
@@ -105,9 +106,9 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-} */ */
+}
 
-/* .panel p {
+.panel p {
   text-transform: uppercase;
   font-family: "Amatic SC", cursive;
   text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
@@ -137,15 +138,15 @@ ul {
 .panel.is-open {
   font-size: 40px;
   flex-grow: 5;
-}
+} */
 
-.calendar {
+/* .calendar {
   font-size: 20px;
   border-collapse: collapse;
   margin: 0 auto;
-} */
+}
 
-/* .calendar th,
+.calendar th,
 .calendar td {
   border: 1px solid #000000;
   padding: 10px;
@@ -179,3 +180,101 @@ ul {
   visibility: hidden;
   opacity: 0;
 } */
+
+/* .pallet {
+  display: flex;
+  min-height: 100vh;
+}
+
+.pallet__item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-basis: calc(100% / 6);
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  cursor: pointer;
+  padding: 10px;
+}
+.pallet__item:not(:last-child) {
+  margin-right: 7px;
+}
+
+.pallet__item.active {
+  outline: 5px solid rgb(168, 9, 28);
+}
+
+.pallet__item-color {
+  display: inline-block;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  cursor: auto;
+} */
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+section {
+  background: url("../img/pexels-pixabay-237464.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.key__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.key__item {
+  border: 1px solid lawngreen;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem 0.5rem;
+  transition: all 0.07s;
+  width: 110px;
+  text-align: center;
+  color: antiquewhite;
+  background: rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 5px #000;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: chartreuse;
+  text-shadow: 0 0 10px chartreuse;
+}
+
+span {
+  display: block;
+  font-size: 40px;
+  font-family: inherit;
+}
+
+.key__sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: chartreuse;
+}
+
+.back-link {
+  position: absolute;
+  color: cadetblue;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+}
