@@ -21,7 +21,6 @@
 //   })
 // );
 
-// Для динамічного створення палітри
 // function getRandomColor() {
 //   return `#${getRandomHex()}${getRandomHex()}${getRandomHex()}`;
 // }
@@ -50,19 +49,37 @@
 //   });
 // });
 
+const list = document.querySelector(".key__list");
+list.addEventListener("transitionend", (event) => {
+  if (event.propertyName === "transform") {
+    event.target.classList.remove("playing");
+  }
+});
+list.addEventListener("click", (event) => {
+  if (event.target.nodeName === "UL") {
+    return;
+  }
+  //   let key = "";
+  //   const item = event.target.parentNode;
+  //   if (event.target.nodeName === "LI") {
+  //     event.target.classList.add("playing");
+  //     key = event.target.dataset.key;
+  //   } else {
+  //     item.classList.add("playing");
+  //     key = event.target.parentNode.dataset.key;
+  //   }
 
-
-// const list = document.querySelector(".key__list");
-// list.addEventListener("transitionend", (event) => {
-//   console.log(event.propertyName);
-//   if (event.propertyName === "transform") {
-//     event.target.classList.remove("playing");
-//   }
-// });
-
-// const musicList = document.querySelectorAll(".key__item");
-// musicList.forEach((element) =>
-//   element.addEventListener("click", () => {
-//     element.classList.add("playing");
-//   })
-// );
+  const item = event.target.closest(".key__item");
+  item.classList.add("playing");
+  const sound = document.querySelector(`audio[data-key="${item.dataset.key}"]`);
+  sound.play();
+});
+document.addEventListener("keydown", (event) => {
+  const item = document.querySelector(`li[data-key="${event.keyCode}"]`);
+  if (item === null) {
+    return;
+  }
+  item.classList.add("playing");
+  const sound = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+  sound.play();
+});
