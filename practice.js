@@ -75,26 +75,26 @@
 // console.log(total);
 //////////////////////////////////////////////////////////////////////////////////
 
-// function maskify(cc) {
-//   //   console.log(cc.length);
-//   if (cc.length < 4) {
-//     return cc;
-//   }
-//   let string = "";
-//   for (let i = 0; i < cc.length; i += 1) {
-//     // console.log(i);
-//     if (i < cc.length - 4) {
-//       console.log(cc[i]);
-//       string += "#";
-//       continue;
-//     }
-//     string += cc[i];
-//     // console.log(cc[i]);
-//   }
-//   console.log(string);
-//   return string;
-// }
-// maskify("47834783473847343847384");
+function maskify(cc) {
+  console.log(cc.length);
+  if (cc.length < 4) {
+    return cc;
+  }
+  let string = "";
+  for (let i = 0; i < cc.length; i += 1) {
+    // console.log(i);
+    if (i < cc.length - 4) {
+      string += "#";
+      continue;
+    }
+    console.log(cc.length - 4);
+    string += cc[i];
+    // console.log(cc[i]);
+  }
+
+  return string;
+}
+maskify("47834783473847343847384");
 
 // function sortTransform(a) {
 //   const string = [...a.slice(0, 2), ...a.slice(-2)]
