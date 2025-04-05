@@ -11,7 +11,6 @@
 // let newArr = [];
 
 // for (let i = 0; i < employees.length; i += 1) {
-//   console.log(employees.indexOf(employees[i]));
 //   if (employees.indexOf(employees[i]) === i) {
 //     newArr.push(employees[i]);
 //   }
@@ -31,6 +30,20 @@
 // --------------------------------------
 
 // const genres = ["Jazz", "Blues", "Рок-н-рол", "Country", "Reggy"];
+
+// const longest = genres.reduce((a, b) => (b.length > a.length ? b : a));
+// console.log(longest);
+
+// let longest = "";
+// let maxLength = 0;
+
+// for (let i = 0; i < genres.length; i += 1) {
+//   if (genres[i].length > maxLength) {
+//     maxLength = genres[i].length;
+//     longest = genres[i];
+//   }
+// }
+// console.log("The longest word", longest);
 
 // const longestWord = genres.reduce((acc, genre) => {
 //   if (acc.length < genre.length) {
@@ -148,12 +161,12 @@
 // }
 // console.log(cutFruits(["apple", "pear", "banana", "bomb"]));
 
-function accum(s) {
-  return s
-    .split("")
-    .map((char, index) => char.toUpperCase() + char.toLowerCase().repeat(index))
-    .join("-");
-}
+// function accum(s) {
+//   return s
+//     .split("")
+//     .map((char, index) => char.toUpperCase() + char.toLowerCase().repeat(index))
+//     .join("-");
+// }
 
-console.log(accum("abcd")); // "A-Bb-Ccc-Dddd"
-console.log(accum("RqaEzty")); // "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// console.log(accum("abcd")); // "A-Bb-Ccc-Dddd"
+// console.log(accum("RqaEzty")); // "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
