@@ -76,7 +76,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 // function maskify(cc) {
-//   //   console.log(cc.length);
+//   console.log(cc.length);
 //   if (cc.length < 4) {
 //     return cc;
 //   }
@@ -84,14 +84,14 @@
 //   for (let i = 0; i < cc.length; i += 1) {
 //     // console.log(i);
 //     if (i < cc.length - 4) {
-//       console.log(cc[i]);
 //       string += "#";
 //       continue;
 //     }
+//     console.log(cc.length - 4);
 //     string += cc[i];
 //     // console.log(cc[i]);
 //   }
-//   console.log(string);
+
 //   return string;
 // }
 // maskify("47834783473847343847384");
@@ -418,97 +418,3 @@
 //     );
 // }
 // present("badpresent", 3);
-
-// const number = 3;
-// // console.log(number / 2 === 0);
-
-// let text = "Hello";
-// // console.log(text.split("").reverse().join(""));
-
-// for (let i = 0; i < text.length; i += 1) {
-//   console.log(text[i]);
-// }
-
-// for (let i = 1; i <= 10; i += 1) {
-//   console.log(`${i} * 2 = ${i * 2}`);
-// }
-// function multiply(a, b) {
-//   console.log(a * b);
-// }
-
-// multiply(2, 3);
-
-// function generatePassword() {
-//   const chars =
-//     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-//   let password = [];
-//   for (let i = 1; i <= 8; i += 1) {
-//     const randomIndex = Math.floor(Math.random() * chars.length);
-//     console.log(chars[randomIndex]);
-//     password.push(chars[randomIndex]);
-//   }
-//   console.log(password.join(""));
-// }
-// generatePassword();
-
-// function generatePassword() {
-//   const chars =
-//     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
-//   let password = "";
-//   for (let i = 1; i <= 8; i += 1) {
-//     const randomIndex = Math.floor(Math.random() * chars.length);
-//     password += chars[randomIndex];
-//   }
-//   console.log(password);
-// }
-// generatePassword();
-
-// const numbers = [8, 1, 5, 2, 7];
-// let min = numbers[0];
-// function findMin(numbers) {
-//   for (let i = 0; i < numbers.length; i += 1) {
-//     if (numbers[i] < min) {
-//       min = numbers[i];
-//     }
-//   }
-//   console.log(min);
-// }
-
-// findMin(numbers);
-
-// function random() {
-//   const randomNumber = Math.floor(Math.random() * 10);
-
-//   let customerNumber = null;
-
-//   while (customerNumber !== randomNumber) {
-//     customerNumber = Number(prompt("guess number"));
-
-//     if (customerNumber === randomNumber) {
-//       console.log("success");
-//     }
-//     if (customerNumber < randomNumber) {
-//       console.log("try again to small");
-//     }
-//     if (customerNumber > randomNumber) {
-//       console.log("try again too big");
-//     }
-//   }
-// }
-
-// random();
-// function palindrom() {
-//   const message = "A man a plan a canal Panama";
-//   const newMessage = message.toLowerCase().replaceAll(" ", "").split("");
-//   console.log(newMessage);
-//   for (let i = 0; i < newMessage.length; i += 1) {
-//     console.log(newMessage[i]);
-//     //   console.log(newMessage[newMessage.length - 1 - i]);
-//     if (newMessage[i] !== newMessage[newMessage.length - 1 - i]) {
-//       return false;
-//     }
-//   }
-//   return true;
-// }
-
-// console.log(palindrom());
