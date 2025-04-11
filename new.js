@@ -170,3 +170,183 @@
 
 // console.log(accum("abcd")); // "A-Bb-Ccc-Dddd"
 // console.log(accum("RqaEzty")); // "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+
+// ____________________________________
+
+// const films = {
+//   title: "Matrix",
+//   description:
+//     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, nemo iusto! Et doloribus praesentium laboriosam dolorem veritatis, magnam atque amet!",
+//   rating: 4,
+//   actors: ["Aiden", "Mason", "Jimmy"],
+//   isAdult: true,
+//   location: {
+//     country: "Jamaica",
+//     city: "Ocho Rios",
+//   },
+// };
+// const values = Object.values(film);
+// const keys = Object.keys(film);
+// for (const key of keys) {
+//   console.log(`${key}: ${film[key]}`);
+// }
+// console.log(keys[0]);
+// const alls = Object.entries(film);
+
+// for (const all of alls) {
+//   console.log(all[1]);
+// }
+// let arr = [];
+// for (key in films) {
+//   arr.push(films[key]);
+// }
+// console.log(arr);
+
+// const salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130,
+// };
+
+// const values = Object.values(salaries);
+// console.log(values);
+// let total = 0;
+// for (let i = 0; i < values.length; i += 1) {
+//   total += values[i];
+// }
+
+// console.log(total);
+
+// let total = 0;
+// for (key in salaries) {
+//   total += salaries[key];
+// }
+// console.log(total);
+
+// const total = Object.values(salaries).reduce((acc, salary) => {
+//   acc += salary;
+//   return acc;
+// }, 0);
+// console.log(total);
+
+// const filmoteka = [
+//   {
+//     id: 1,
+//     title: "Duna",
+//     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+//     rating: 10,
+//     actors: [
+//       "Amelia Gibson",
+//       "Cameron Clayton",
+//       "Viola Vasquez",
+//       "Lula Collins",
+//       "Victor Nichols",
+//     ],
+//     adult: false,
+//     image: "https://via.placeholder.com/640/480",
+//   },
+//   {
+//     id: 2,
+//     title: "Venom",
+//     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+//     rating: 8,
+//     actors: [
+//       "Inez Greer",
+//       "Barry Curtis",
+//       "Blanche Rios",
+//       "Glen Perry",
+//       "Logan Powers",
+//     ],
+//     adult: false,
+//     image: "https://via.placeholder.com/640/480",
+//   },
+//   {
+//     id: 3,
+//     title: "Luca",
+//     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+//     rating: 9,
+//     actors: [
+//       "Marguerite Gibbs",
+//       "Lora Alvarez",
+//       "Jorge Simpson",
+//       "Thomas Hall",
+//       "Darrell Hunter",
+//     ],
+//     adult: false,
+//   },
+//   {
+//     id: 4,
+//     title: "Free Guy",
+//     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+//     rating: 6,
+//     actors: [
+//       "Calvin Andrews",
+//       "Mamie Myers",
+//       "Madge Townsend",
+//       "Ralph Kim",
+//       "Jorge Reese",
+//     ],
+//     adult: false,
+//     image: "https://via.placeholder.com/640/480",
+//   },
+//   {
+//     id: 5,
+//     title: "Saw",
+//     description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+//     rating: 7,
+//     actors: [
+//       "Adele Marsh",
+//       "Melvin Burgess",
+//       "Jesus Reese",
+//       "Harriet Moreno",
+//       "Curtis Cox",
+//     ],
+//     adult: false,
+//   },
+// ];
+//   Напишіть функцію getAllTitlesOfFilms(films), яка повертає масив з усіма назвами фільмів.
+
+// function getAllTitlesOfFilms(films) {
+//   let arr = [];
+//   for (const film of films) {
+//     arr.push(film.title);
+//   }
+// }
+// getAllTitlesOfFilms(filmoteka);
+
+//? Напишіть функцію findFilmByName(films, filmTitle), яка шукає фільм за назвою.
+
+// function findFilmByName(films, filmTitle) {
+//   for (const film of films) {
+//     if (filmTitle === film.title) {
+//       return film;
+//     }
+//   }
+//   return "not found";
+// }
+// console.log(findFilmByName(filmoteka, "Saw"));
+
+//? Напишіть функцію getAdultFilms(films), яка повертає масив усіх дорослих фільмів.
+
+// function getAdultFilms(films) {
+//   let arr = [];
+//   for (const film of films) {
+//     if (film.adult) {
+//       arr.push(film);
+//     }
+//   }
+//   return arr.length ? arr : "no films for adults";
+// }
+// console.log(getAdultFilms(filmoteka));
+
+//? Напишіть функцію getNotAdultFilms(films), яка повертає масив усіх фільмів без обмежень.
+// function getNotAdultFilms(films) {
+//   let arr = [];
+//   for (const film of films) {
+//     if (!film.adult) {
+//       arr.push(film);
+//     }
+//   }
+//   return arr.length ? arr : "not films with no adult";
+// }
+// console.log(getNotAdultFilms(filmoteka));
